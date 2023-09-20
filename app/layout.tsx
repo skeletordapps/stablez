@@ -7,7 +7,7 @@ import Footer from "./components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stable X",
+  title: "Stable-X",
   description:
     "The main liquidity booster for stable assets and lsdfi exclusively on Base built on Aerodrome.",
 };
