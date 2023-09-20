@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-row justify-between items-center w-full px-[10px] mt-[100px] text-[14px]">
-          <span className={`text-[#9CA0BC] tracking-[3px] ${roboto.className}`}>
+          <span className={`text-white tracking-[3px] ${roboto.className}`}>
             2023 © Stable-X Finance
           </span>
           <Link href="/" className="text-white border-b hover:opacity-75">
