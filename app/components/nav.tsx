@@ -31,7 +31,7 @@ export default function Nav() {
           </div>
         </div>
         <button
-          className={`bg-blue min-w-[140px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium ${roboto.className}`}
+          className={`transition-all bg-blue min-w-[140px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
         >
           Connect Wallet
         </button>
