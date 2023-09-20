@@ -21,7 +21,7 @@ export default function Nav() {
               <Link
                 key={index}
                 href={item.href}
-                className="transition-all hover:text-blue hover:border-b border-blue"
+                className="hover:text-blue hover:border-b border-blue"
               >
                 {item.title}
               </Link>

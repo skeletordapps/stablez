@@ -13,18 +13,18 @@ export default function Footer() {
       <div className="flex flex-col w-full max-w-[1600px] px-[70px] gap-4">
         <div className="flex flex-row justify-between items-center border-b border-white pb-[20px] w-full px-[10px] text-white">
           <div className="flex flex-row items-center gap-5">
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               Articles
             </Link>
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               Articles
             </Link>
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               Articles
             </Link>
           </div>
           <div className="flex flex-row items-center gap-2">
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               <Image
                 src="/icon-template.svg"
                 width={25}
@@ -33,7 +33,7 @@ export default function Footer() {
                 className="mb-[2px]"
               />
             </Link>
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               <Image
                 src="/icon-template.svg"
                 width={25}
@@ -46,18 +46,18 @@ export default function Footer() {
         </div>
         <div className="flex flex-row justify-between items-center w-full px-[10px] text-white">
           <div className="flex flex-row items-center gap-5">
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               Articles
             </Link>
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               Articles
             </Link>
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               Articles
             </Link>
           </div>
           <div className="flex flex-row items-center gap-2">
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               <Image
                 src="/icon-template.svg"
                 width={25}
@@ -66,7 +66,7 @@ export default function Footer() {
                 className="mb-[2px]"
               />
             </Link>
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               <Image
                 src="/icon-template.svg"
                 width={25}
@@ -75,7 +75,7 @@ export default function Footer() {
                 className="mb-[2px]"
               />
             </Link>
-            <Link href="/" className="hover:text-blue">
+            <Link href="/" className="hover:opacity-75">
               <Image
                 src="/icon-template.svg"
                 width={25}
