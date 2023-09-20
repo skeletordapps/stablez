@@ -186,9 +186,10 @@ export default function Home() {
             />
             <Link
               href="/"
-              className={`font-light text-[35px] text-blue ${roboto.className}`}
+              className={`font-light text-[35px] text-blue flex justify-center gap-3 hover:opacity-75 ${roboto.className}`}
             >
-              JOIN US →
+              <span className="mt-1">JOIN US</span>
+              <span>→</span>
             </Link>
           </div>
         </div>

@@ -14,7 +14,9 @@ export default function Nav() {
       <div
         className={`flex items-center justify-between w-full py-[20px] px-[10px] border-b border-blue/[24%] ${roboto.className}`}
       >
-        <Image src="/type-logo2.svg" width={209.5} height={26} alt="logo" />
+        <Link href="/" className="hover:opacity-75">
+          <Image src="/type-logo2.svg" width={209.5} height={26} alt="logo" />
+        </Link>
         <div className="flex items-center justify-center w-full">
           <div className="text-slate-600 flex items-center gap-14 text-[16px]">
             {routes.map((item, index) => (
