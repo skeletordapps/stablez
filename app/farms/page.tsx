@@ -79,7 +79,7 @@ const pages = [1, 2, 3];
 
 export default function Farms() {
   const [filterSelected, setFilterSelected] = useState(0);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   return (
     <main className="flex flex-col w-full max-w-[1600px] px-[70px]">
       {/* TOP SECTION */}
@@ -108,7 +108,7 @@ export default function Farms() {
         {/* HOW IT WORKS */}
         <div className="w-full max-w-[26%] h-[240px] bg-blue rounded-[16px] flex flex-col justify-between text-white p-6 border border-[#7479A3]">
           <h3 className="font-semibold">How it works</h3>
-          <p className="text-sm">
+          <p className="text-sm font-light text-neutral-300">
             The deeper the liquidity (TVL), the lower the slippage a pool will
             offer. LPs get AERO emissions, while veAERO lockers get the pool
             trading fees as an incentive to vote on the most productive pools.
@@ -221,7 +221,7 @@ export default function Farms() {
           <span className="text-[#2F3B89] font-medium text-[16px]">
             Showing 25 out of 58 pools...
           </span>
-          <div className="flex flex-row items-center justify-between  text-[14px] font-medium">
+          <div className="flex flex-row items-center justify-between  text-[14px] font-medium border border-[#2F3B89]/30 rounded-[8px]">
             <button className="flex flex-row items-center justify-between gap-2 p-2 px-3 rounded-l-[8px] bg-white text-[#2F3B89] hover:bg-[#2F3B89] hover:text-white">
               <svg
                 fill="none"
@@ -244,7 +244,7 @@ export default function Farms() {
               <button
                 key={index}
                 onClick={() => setPage(item)}
-                className={`text-blue flex flex-row items-center justify-between p-2 px-3 ${
+                className={`flex flex-row items-center justify-between p-2 px-3 ${
                   page === item
                     ? "bg-[#2F3B89] text-white hover:bg-[#2F3B89] hover:opacity-90"
                     : "bg-white text-[#2F3B89] hover:bg-[#2F3B89]/60 hover:text-white/70"
