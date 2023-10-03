@@ -176,6 +176,7 @@ export default function Farms() {
               // <>
               //   {index > 0 && <div className="w-full h-[1px] bg-white" />}
               <div
+                key={index}
                 className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluex border even:border-blue-100 odd:border-bluex/10 rounded-[8px] py-8 text-[14px] text-right`}
               >
                 <div className="flex flex-row w-full h-full items-center justify-between px-8">
