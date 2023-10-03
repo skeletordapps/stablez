@@ -1,4 +1,5 @@
-export const routes = [
+export type route = {title: string, href: string}
+export const routes: {title: string, href: string}[] = [
   {
     title: "Home",
     href: "/"

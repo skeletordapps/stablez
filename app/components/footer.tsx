@@ -9,7 +9,7 @@ const roboto = Roboto_Condensed({
 
 export default function Footer() {
   return (
-    <main className="flex flex-col pt-[100px] pb-[60px] justify-center items-center w-full bg-blue">
+    <main className="flex flex-col pt-[100px] pb-[60px] justify-center items-center w-full bg-bluex">
       <div className="flex flex-col w-full max-w-[1600px] px-[70px] gap-4">
         <div className="flex flex-row justify-between items-center border-b border-white pb-[20px] w-full px-[10px] text-white">
           <div className="flex flex-row items-center gap-5">
