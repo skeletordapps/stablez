@@ -40,19 +40,19 @@ const firstStage = [
 
 const secondStage = [
   {
-    iconHref: "/icon-bluex-template.svg",
+    iconHref: "/icon-blue-template.svg",
     title: "Referral Program",
     description:
       "We will develop a referral program for our loyal LP that bring new users in exchange for boosting their yields.",
   },
   {
-    iconHref: "/icon-bluex-template.svg",
+    iconHref: "/icon-blue-template.svg",
     title: "Bribe Streams",
     description:
       "We want to automate bribes by giving projects the opportunity to stream their bribes over a longer time-frame and skip the manual process of doing it weekly.",
   },
   {
-    iconHref: "/icon-bluex-template.svg",
+    iconHref: "/icon-blue-template.svg",
     title: "Multi one-click LP Zapper",
     description:
       "You want to buy various lp tokens and stake them but you are tired of doing it all manually? With our solution you can easily use only one token and receive all LP tokens you chose via our zapper.",
