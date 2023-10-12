@@ -1,23 +1,41 @@
-export type route = {title: string, href: string}
-export const routes: {title: string, href: string}[] = [
+import { discord, telegram, twitterX } from "./public/svg";
+
+export type route = { title: string; href: string };
+export const routes: route[] = [
   {
     title: "Home",
-    href: "/"
+    href: "/",
   },
   {
-    title: "Buy",
-    href: "#"
+    title: "Dashboard",
+    href: "#",
   },
   {
-    title: "Farms",
-    href: "/farms"
+    title: "Earn",
+    href: "/earn",
   },
   {
-    title: "Zapping",
-    href: "#"
+    title: "Docs",
+    href: "#",
+  },
+];
+
+export type social = { title: string; href: string; icon: any };
+
+export const socials: social[] = [
+  {
+    title: "Twitter-X",
+    href: "#",
+    icon: twitterX,
   },
   {
-    title: "Guide",
-    href: "#"
-  }
-]
+    title: "Telegram",
+    href: "#",
+    icon: telegram,
+  },
+  {
+    title: "Discord",
+    href: "#",
+    icon: discord,
+  },
+];

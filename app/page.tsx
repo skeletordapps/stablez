@@ -70,35 +70,37 @@ export default function Home() {
           <p
             className={`text-[50px] text-[#090E34] leading-[66px] max-w-[560px] ${roboto.className}`}
           >
-            The main liquidity booster for stable assets and{" "}
-            <span className="text-[#7479A3]">lsdfi</span> exclusively on{" "}
-            <span className="text-bluex">Base</span> built on Aerodrome.
+            The leading yield booster for stable and{" "}
+            <span className="text-[#7479A3]">LSDFI</span> assets built
+            exclusively for <span className="text-bluex">Base</span>.
           </p>
 
           <div className="flex flex-col items-center gap-4 leading-[30px]">
             <Image src="/symbols.svg" width={355} height={237} alt="symbols" />
             <p className="text-[#3E3E3E] text-[16px] max-w-[700px] font-medium mt-10">
-              <span className="text-[#000D6C] font-bold">We incentivize</span>{" "}
-              LPs on aerodrome through our token{" "}
-              <span className="text-[#000D6C] font-bold">StableX</span> in the
-              form of <span className="text-[#000D6C] font-bold">xStable</span>.
-              can be staked for real yield, redeemed immediately for a discount
-              or unlocked over 8 weeks.
+              LPs are incentivized to engage with our ecosystem through the
+              utilization of our proprietary token -{" "}
+              <span className="text-[#000D6C] font-bold">Stable-X</span> - as a
+              valuable incentive. Stake Stable-X and get access to lucrative
+              yield opportunities.
             </p>
 
             <p className="text-[#3E3E3E] text-[16px] max-w-[700px] mb-4 font-medium">
-              <span className="text-[#000D6C] font-bold">Our revenue</span>{" "}
-              comes from the lps staked on our dapp which are earning{" "}
-              <span className="text-[#000D6C] font-bold">#aero</span> tokens.
-              30% of these aero tokens go to Stable-X stakers while 70% is
-              locked to increase the amount of veaero of the treasury. We use
-              our veaero position to boost our ecosystem including voting for
-              our own LP to attract liquidity.
+              Protocol Revenue stems from liquidity mining incentives generated
+              from our partner pools. 30% of this revenue is used to reward
+              Stable-X stakers, with the remaining 70% strategically allocated
+              to enhance our governance holdings within partner protocols.
+            </p>
+
+            <p className="text-[#3E3E3E] text-[16px] max-w-[700px] mb-4 font-medium">
+              The <span className="text-[#000D6C] font-bold">Stable-X DAO</span>{" "}
+              undertakes governance decisions and benefits from a share of the
+              value accruals therein.
             </p>
           </div>
         </div>
       </section>
-      <section className="flex flex-col justify-center items-center bg-gradient-to-r from-transparent via-bluex/10 to-transparent xl:px-[70px] border-b border-bluex/[24%]">
+      <section className="hidden flex flex-col justify-center items-center bg-gradient-to-r from-transparent via-bluex/10 to-transparent xl:px-[70px] border-b border-bluex/[24%]">
         <div className="flex flex-col my-[78px] w-full">
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}
@@ -141,7 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-[100px] mb-[100px] xl:px-[70px]">
+      <section className="hidden flex flex-col justify-center items-center mt-[100px] mb-[100px] xl:px-[70px]">
         <div className="flex flex-col w-full">
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}

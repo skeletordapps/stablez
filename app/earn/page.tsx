@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Roboto_Condensed } from "next/font/google";
 import { useState } from "react";
+import { usdc, fusdt, piggy } from "@/public/svg";
 
 const roboto = Roboto_Condensed({
   weight: ["300", "400", "700"],
@@ -27,6 +28,7 @@ const farms = [
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
     status: "OPEN",
+    images: [usdc, fusdt],
   },
   {
     pair: "USDC/wUSDR",
@@ -36,6 +38,7 @@ const farms = [
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
     status: "ENDED",
+    images: [usdc, fusdt],
   },
   {
     pair: "USDC/USDC",
@@ -45,6 +48,7 @@ const farms = [
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
     status: "OPEN",
+    images: [usdc, fusdt],
   },
   {
     pair: "USDC/wUSDR",
@@ -54,6 +58,7 @@ const farms = [
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
     status: "ENDED",
+    images: [usdc, fusdt],
   },
   {
     pair: "USDC/USDC",
@@ -63,6 +68,7 @@ const farms = [
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
     status: "OPEN",
+    images: [usdc, fusdt],
   },
   {
     pair: "USDC/wUSDR",
@@ -72,12 +78,13 @@ const farms = [
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
     status: "ENDED",
+    images: [usdc, fusdt],
   },
 ];
 
 const pages = [1, 2, 3];
 
-export default function Farms() {
+export default function Earn() {
   const [filterSelected, setFilterSelected] = useState(0);
   const [page, setPage] = useState(1);
   return (
@@ -151,11 +158,26 @@ export default function Farms() {
                 ))}
               </div>
             </div>
-            {/* LIST HEADER */}
             <div
-              className={`flex flex-row items-center justify-between w-full py-6 mt-5 px-8 text-[20px] text-bluex text-right ${roboto.className}`}
+              className={`hidden xl:flex flex-row items-center justify-between w-full py-6 mt-5 px-8 text-[16px] text-bluex text-right ${roboto.className}`}
             >
-              <span className="w-[300px] text-left">Farm</span>
+              <span className="w-[300px] text-left">Pair</span>
+              <button className="underline hover:opacity-80 w-[100px] text-right">
+                Farm Details
+              </button>
+              <button className="underline hover:opacity-80 w-[120px] text-right">
+                User Infos
+              </button>
+              <button className="underline hover:opacity-80 w-[120px] text-right">
+                Status
+              </button>
+              <div className="w-[11px]" />
+            </div>
+            {/* LIST HEADER */}
+            {/* <div
+              className={`flex flex-row items-center justify-between w-full py-6 mt-5 px-8 text-[16px] text-bluex text-right ${roboto.className}`}
+            >
+              <span className="w-[300px] text-left">Pair</span>
               <button className="underline hover:opacity-80 w-[50px] text-right">
                 APR
               </button>
@@ -165,39 +187,120 @@ export default function Farms() {
               <span className="w-[100px]">Staked</span>
               <span className="w-[150px]">Est. Rewards</span>
               <span className="w-[150px]">Claimed</span>
-              <button className="underline hover:opacity-80 w-[100px] text-right">
+              <button className="underline hover:opacity-80 w-[100px] text-right mr-1">
                 Status
               </button>
-            </div>
+            </div> */}
           </div>
           {/* LIST ITEMS */}
-          <div className="flex flex-col w-full gap-1">
+          <div className="flex flex-col w-full gap-[2px]">
             {farms.map((farm, index) => (
               // <>
               //   {index > 0 && <div className="w-full h-[1px] bg-white" />}
-              <div
+              <button
+                key={index}
+                className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluex border even:border-blue-100 odd:border-bluex/10 rounded-[8px] py-4 text-[14px] text-right`}
+              >
+                <div className="flex flex-col xl:flex-row w-full h-full items-center justify-between px-8">
+                  <div className="flex items-center drop-shadow-md">
+                    <div className="w-[28px] z-10">{usdc}</div>
+                    <div className="w-[28px] ml-[-10px]">{fusdt}</div>
+                    <span className="w-[238px] text-left ml-4">
+                      {farm.pair}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-1 w-full">
+                    <p>
+                      <span className="mr-1 text-[12px]">APR:</span>
+                      {farm.apr}
+                    </p>
+                    <p>
+                      <span className="mr-1  text-[12px]">TVL:</span>
+                      {farm.tvl}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-1 w-full">
+                    <p>
+                      <span className="mr-1  text-[12px]">Staked:</span>
+                      {farm.staked}
+                    </p>
+                    <p>
+                      <span className="mr-1  text-[12px]">Est. Rewards:</span>
+                      {farm.estimatedRewards}
+                    </p>
+                    <p>
+                      <span className="mr-1  text-[12px]">Claimed:</span>
+                      {farm.claimedRewards}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-1 w-full">
+                    <p>
+                      {/* <span className="mr-1 text-black/50 text-[12px]">
+                        Status:
+                      </span> */}
+                      <span
+                        className={`w-[60px] text-[14px] ${
+                          farm.status === "OPEN"
+                            ? "text-green-700"
+                            : "text-red-500"
+                        } ${roboto.className}`}
+                      >
+                        {farm.status}
+                      </span>
+                    </p>
+                  </div>
+
+                  <Link
+                    href="#"
+                    className={`transition-all bg-bluex min-w-[100px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluex border hover:scale-[1.02] gap-3 ${roboto.className}`}
+                  >
+                    {piggy}
+                    <span>Earn</span>
+                  </Link>
+
+                  {/* <span className="w-[100px]">{farm.staked}</span>
+                  <span className="w-[150px]">{farm.estimatedRewards}</span>
+                  <span className="w-[150px]">{farm.claimedRewards}</span> */}
+                </div>
+              </button>
+              // </>
+            ))}
+          </div>
+          {/* <div className="flex flex-col w-full gap-[2px]">
+            {farms.map((farm, index) => (
+              // <>
+              //   {index > 0 && <div className="w-full h-[1px] bg-white" />}
+              <button
                 key={index}
                 className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluex border even:border-blue-100 odd:border-bluex/10 rounded-[8px] py-8 text-[14px] text-right`}
               >
                 <div className="flex flex-row w-full h-full items-center justify-between px-8">
-                  <span className="w-[300px] text-left">{farm.pair}</span>
+                  <div className="flex items-center drop-shadow-md">
+                    <div className="w-[28px] z-10">{usdc}</div>
+                    <div className="w-[28px] ml-[-10px]">{fusdt}</div>
+                    <span className="w-[238px] text-left ml-4">
+                      {farm.pair}
+                    </span>
+                  </div>
+
                   <span className="w-[50px]">{farm.apr}</span>
                   <span className="w-[100px]">{farm.tvl}</span>
                   <span className="w-[100px]">{farm.staked}</span>
                   <span className="w-[150px]">{farm.estimatedRewards}</span>
                   <span className="w-[150px]">{farm.claimedRewards}</span>
                   <span
-                    className={`w-[60px] bg-white text-center p-1 rounded-[8px] ml-[40px] ${
+                    className={`w-[60px] bg-gray-100 text-center p-1 rounded-[8px] ml-[40px] ${
                       farm.status === "OPEN" ? "text-green-700" : "text-red-500"
                     } ${roboto.className}`}
                   >
                     {farm.status}
                   </span>
                 </div>
-              </div>
+              </button>
               // </>
             ))}
-          </div>
+          </div> */}
           {/* PAGINATOR */}
           <div className="flex flex-row justify-between items-center px-2 my-10">
             <span className="text-black font-medium text-[16px]">
