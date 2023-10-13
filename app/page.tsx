@@ -10,30 +10,30 @@ const roboto = Roboto_Condensed({
 const firstStage = [
   {
     iconHref: "/check-circle.svg",
-    title: "Bribe Master",
+    title: "Yield Booster",
     description:
-      "Tired of bribing massive amounts of your tokens each epoch with unpredictable emissions for your LP? You can bribe us directly and we will vote for your project over a longer time-frame (e.g 1 month ). This will reduce costs and uncertainty on your side.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     bg: "bg-[#000D6C]",
   },
   {
     iconHref: "/check-circle.svg",
-    title: "The Stable-X",
+    title: "Protocol Integrations",
     description:
-      "In cases of depeg we will help stabilize your token via votes and or even straight up buy it for arbitrage opportunities.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     bg: "bg-bluex",
   },
   {
     iconHref: "/check-circle.svg",
-    title: "Stablecoin Dashboard",
+    title: "Audit",
     description:
-      "We want to provide more data on stablecoin prices and bring transparency.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     bg: "bg-[#000D6C]",
   },
   {
     iconHref: "/check-circle.svg",
-    title: "Stable-X Fund",
+    title: "Stable-X Staking",
     description:
-      "We are happy to support projects within the stablecoin and lsdfi space by investing, advising, helping with marketing or even act as a launchpad.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     bg: "bg-bluex",
   },
 ];
@@ -41,21 +41,27 @@ const firstStage = [
 const secondStage = [
   {
     iconHref: "/icon-blue-template.svg",
-    title: "Referral Program",
+    title: "Referral System",
     description:
-      "We will develop a referral program for our loyal LP that bring new users in exchange for boosting their yields.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     iconHref: "/icon-blue-template.svg",
-    title: "Bribe Streams",
+    title: "Governance Launch",
     description:
-      "We want to automate bribes by giving projects the opportunity to stream their bribes over a longer time-frame and skip the manual process of doing it weekly.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     iconHref: "/icon-blue-template.svg",
-    title: "Multi one-click LP Zapper",
+    title: "Bribes for Stakers",
     description:
-      "You want to buy various lp tokens and stake them but you are tired of doing it all manually? With our solution you can easily use only one token and receive all LP tokens you chose via our zapper.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    iconHref: "/icon-blue-template.svg",
+    title: "Chain Expansion",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
 
@@ -100,7 +106,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="hidden flex flex-col justify-center items-center bg-gradient-to-r from-transparent via-bluex/10 to-transparent xl:px-[70px] border-b border-bluex/[24%]">
+      <section className="flex flex-col justify-center items-center bg-gradient-to-r from-transparent via-bluex/10 to-transparent xl:px-[70px] border-b border-bluex/[24%]">
         <div className="flex flex-col my-[78px] w-full">
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}
@@ -143,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="hidden flex flex-col justify-center items-center mt-[100px] mb-[100px] xl:px-[70px]">
+      <section className="flex flex-col justify-center items-center mt-[100px] mb-[100px] xl:px-[70px]">
         <div className="flex flex-col w-full">
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}
@@ -155,7 +161,7 @@ export default function Home() {
             <span className="text-bluex font-bold">#base</span>
           </span>
 
-          <div className="flex flex-col xl:flex-row justify-between mt-[50px] gap-[24px] xl:gap-0">
+          <div className="flex flex-col xl:flex-row justify-between mt-[50px] gap-[34px]">
             {secondStage.map((item, index) => (
               <div
                 key={index}
