@@ -8,7 +8,7 @@ export const routes: route[] = [
   },
   {
     title: "Dashboard",
-    href: "#",
+    href: "/dashboard",
   },
   {
     title: "Earn",

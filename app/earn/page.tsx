@@ -10,6 +10,20 @@ const roboto = Roboto_Condensed({
   subsets: ["latin"],
 });
 
+const leftInfo = [
+  { title: "Info 1", value: 100000 },
+  { title: "Info 2", value: 100000 },
+  { title: "Info 3", value: 100000 },
+  { title: "Info 4", value: 100000 },
+];
+
+const rightInfo = [
+  { title: "Info 1", value: 100000 },
+  { title: "Info 2", value: 100000 },
+  { title: "Info 3", value: 100000 },
+  { title: "Info 4", value: 100000 },
+];
+
 const filters = [
   "Active",
   "Stable",
@@ -90,7 +104,7 @@ export default function Earn() {
   return (
     <main className="flex flex-col w-full max-w-[1600px] px-[120px] text-center mb-24">
       {/* TOP SECTION */}
-      <section className="flex items-center justify-between w-full mt-[87px] mb-[78px]">
+      <section className="flex items-center justify-between w-full mt-[87px] mb-[38px]">
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white">
           <h3
@@ -102,7 +116,7 @@ export default function Earn() {
             There are currently 34 active farms, 20 stable and 14 volatile
             farms.
           </span>
-          <div className="flex justify-center items-center gap-[150px] font-medium text-[13px] pt-[60px]">
+          {/* <div className="hidden flex justify-center items-center gap-[150px] font-medium text-[13px] pt-[60px]">
             <div className="flex flex-col text-bluex">
               <span className="font-medium text-[28px]">TOTAL STAKED</span>
               <span className="font-black text-[42px]">12000.50k</span>
@@ -114,6 +128,51 @@ export default function Earn() {
             <div className="flex flex-col text-bluex">
               <span className="font-medium text-[28px]">TOTAL STAKED</span>
               <span className="font-black text-[42px]">12000.50k</span>
+            </div>
+          </div> */}
+
+          <div className="flex flex-row items-center justify-between gap-[38px] mt-24">
+            <div className="flex flex-col bg-bluex/80 w-full h-[400px] rounded-[8px] shadow-lg">
+              <div className="flex flex-col text-white p-8 border-b">
+                <span className="font-medium text-[28px]">TOTAL STAKED</span>
+                <span className="font-black text-[42px]">12000.50k</span>
+              </div>
+              <div className="flex flex-col text-white p-8 gap-3 mt-3">
+                {leftInfo.map((item, index) => (
+                  <p key={index} className="flex items-center justify-between">
+                    <span>{item.title}</span>
+                    <span className="flex flex-1 border-b border-dotted mx-2" />
+                    <span>
+                      {item.value.toLocaleString("en-us", {
+                        maximumFractionDigits: 2,
+                      })}
+                      k
+                    </span>
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col bg-bluex/10 w-full h-[400px] rounded-[8px] shadow-lg">
+              <div className="flex flex-col text-bluex p-8 border-b">
+                <span className="font-medium text-[28px]">
+                  REWARDS GENERATED
+                </span>
+                <span className="font-black text-[42px]">12000.50k</span>
+              </div>
+              <div className="flex flex-col text-bluex p-8 gap-3 mt-3">
+                {rightInfo.map((item, index) => (
+                  <p key={index} className="flex items-center justify-between">
+                    <span>{item.title}</span>
+                    <span className="flex flex-1 border-b border-bluex border-dotted mx-2" />
+                    <span>
+                      {item.value.toLocaleString("en-us", {
+                        maximumFractionDigits: 2,
+                      })}
+                      k
+                    </span>
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
