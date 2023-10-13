@@ -166,7 +166,7 @@ export default function Dashboard() {
           <span className="font-light text-[14px] text-[#3E3E3E]">
             A super fancy text describing this page
           </span>
-          <div className="flex justify-center items-center gap-20 font-medium text-[13px] pt-[60px]">
+          <div className="flex flex-col xl:flex-row justify-center items-center gap-10 xl:gap-20 font-medium text-[13px] pt-[60px]">
             <div className="flex flex-col text-bluex w-[300px]">
               <span className="font-medium text-[28px]">TOTAL STAKED</span>
               <span className="font-black text-[42px]">12000.50k</span>
@@ -189,7 +189,7 @@ export default function Dashboard() {
             <span className="font-bold text-white">Charts</span>
           </div>
 
-          <div className="flex flex-row items-center justify-between text-[16px] font-medium gap-10">
+          <div className="flex flex-row items-center justify-between text-[14px] xl:text-[16px] font-medium gap-2 xl:gap-10">
             {filters.map((item, index) => (
               <button
                 key={index}
@@ -210,8 +210,6 @@ export default function Dashboard() {
         {filterSelected === 0 && (
           <Line
             data={data}
-            width={100}
-            height={60}
             options={options}
             className="bg-white/50 w-full p-3 rounded-[8px] mt-3 shadow-xl"
           />
@@ -220,8 +218,6 @@ export default function Dashboard() {
         {filterSelected === 1 && (
           <Bar
             data={barData}
-            width={100}
-            height={60}
             options={barOptions as any}
             className="bg-white/50 w-full p-3 rounded-[8px] mt-3 shadow-xl"
           />
