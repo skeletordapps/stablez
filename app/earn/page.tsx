@@ -131,7 +131,7 @@ export default function Earn() {
             </div>
           </div> */}
 
-          <div className="flex flex-row items-center justify-between gap-[38px] mt-24">
+          <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-24">
             <div className="flex flex-col bg-bluex/80 w-full h-[400px] rounded-[8px] shadow-lg">
               <div className="flex flex-col text-white p-8 border-b">
                 <span className="font-medium text-[28px]">TOTAL STAKED</span>

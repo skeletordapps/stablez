@@ -38,7 +38,8 @@ const roboto = Roboto_Condensed({
 });
 
 export default function Dashboard() {
-  const [filterSelected, setFilterSelected] = useState(0);
+  const [filter, setFilter] = useState(0);
+  const [period, setPeriod] = useState(1);
   const [page, setPage] = useState(1);
 
   const options = {
@@ -151,6 +152,7 @@ export default function Dashboard() {
   };
 
   const filters = ["Chart 1", "Chart 2"];
+  const periods = ["Day", "Week", "15 days", "30 days"];
 
   return (
     <main className="flex flex-col w-full max-w-[1600px] px-[120px] text-center mb-24">
@@ -189,25 +191,45 @@ export default function Dashboard() {
             <span className="font-bold text-white">Charts</span>
           </div>
 
-          <div className="flex flex-row items-center justify-between text-[14px] xl:text-[16px] font-medium gap-2 xl:gap-10">
-            {filters.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => setFilterSelected(index)}
-                className={`flex flex-row items-center justify-between h-6 transition-all
+          <div className="flex items-center gap-10">
+            <div className="flex flex-row items-center justify-between text-[14px] xl:text-[12px] font-medium gap-2 xl:gap-4">
+              {periods.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => setPeriod(index)}
+                  className={`flex flex-row items-center justify-between h-6 transition-all
                   ${
-                    index === filterSelected
+                    index === period
                       ? " text-white border-b  hover:opacity-90"
                       : " text-blue-400  hover:text-white"
                   }
                   `}
-              >
-                {item}
-              </button>
-            ))}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+            <div className="w-1 border-r border-white h-4" />
+            <div className="flex flex-row items-center justify-between text-[14px] xl:text-[16px] font-medium gap-2 xl:gap-10">
+              {filters.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => setFilter(index)}
+                  className={`flex flex-row items-center justify-between h-6 transition-all
+                  ${
+                    index === filter
+                      ? " text-white border-b  hover:opacity-90"
+                      : " text-blue-400  hover:text-white"
+                  }
+                  `}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-        {filterSelected === 0 && (
+        {filter === 0 && (
           <Line
             data={data}
             options={options}
@@ -215,7 +237,7 @@ export default function Dashboard() {
           />
         )}
 
-        {filterSelected === 1 && (
+        {filter === 1 && (
           <Bar
             data={barData}
             options={barOptions as any}
