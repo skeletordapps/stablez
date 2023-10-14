@@ -221,7 +221,7 @@ export default function Earn() {
           {/* LIST ITEMS */}
           <div className="flex flex-col w-full gap-[2px]">
             {farms.map((farm, index) => (
-              <button
+              <div
                 key={index}
                 className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluex border even:border-blue-100 odd:border-bluex/10 rounded-[8px] py-4 text-[14px] text-right`}
                 onMouseEnter={() => setHover(index)}
@@ -312,14 +312,14 @@ export default function Earn() {
                   </p>
 
                   <Link
-                    href="#"
+                    href={`/earn/${index + 1}`}
                     className={`transition-all bg-bluex min-w-[100px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluex border hover:scale-[1.02] gap-3 ${roboto.className}`}
                   >
                     {piggy}
                     <span>Earn</span>
                   </Link>
                 </div>
-              </button>
+              </div>
             ))}
           </div>
 

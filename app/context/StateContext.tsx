@@ -1,12 +1,12 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { usePathname, useParams } from "next/navigation";
 import { useState, createContext, useEffect, ReactNode } from "react";
 
 import { route, routes } from "../../consts";
 
 export const StateContext = createContext({
-  page: routes[0] as route,
-  setPage: (value: route) => {},
+  page: "/",
+  setPage: (value: string) => {},
 });
 
 type Props = {
@@ -15,11 +15,18 @@ type Props = {
 
 export const StateProvider = ({ children }: Props) => {
   const pathname = usePathname();
-  const [page, setPage] = useState(routes[0]);
+  const params = useParams();
+  const [page, setPage] = useState(routes[0].href);
 
   useEffect(() => {
-    const route = routes.find((item) => item.href === pathname)!;
-    setPage(route);
+    const route = routes.find((item) =>
+      params.id
+        ? pathname.substring(0, pathname.lastIndexOf("/")) === item.href
+        : pathname === item.href
+    )!;
+
+    console.log(route);
+    setPage(route.href);
   }, [pathname]);
 
   return (

@@ -30,7 +30,7 @@ export default function Nav() {
                   key={index}
                   href={item.href}
                   className={`hover:text-bluex hover:border-b border-bluex ${
-                    item.href === page.href && "text-bluex border-b"
+                    item.href === page && "text-bluex border-b"
                   }`}
                 >
                   {item.title}
