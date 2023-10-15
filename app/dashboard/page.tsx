@@ -155,9 +155,9 @@ export default function Dashboard() {
   const periods = ["Day", "Week", "15 days", "30 days"];
 
   return (
-    <main className="flex flex-col w-full max-w-[1600px] px-[120px] text-center mb-24">
+    <main className="flex flex-col w-full max-w-[1600px] px-4 xl:px-[120px] text-center mb-24">
       {/* TOP SECTION */}
-      <section className="flex items-center justify-between w-full mt-[87px] mb-[38px]">
+      <section className="flex items-center justify-between w-full mt-10 md:mt-[87px] mb-[38px]">
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white">
           <h3
@@ -170,29 +170,41 @@ export default function Dashboard() {
           </span>
           <div className="flex flex-col xl:flex-row justify-center items-center gap-10 xl:gap-20 font-medium text-[13px] pt-[60px]">
             <div className="flex flex-col text-bluex w-[300px]">
-              <span className="font-medium text-[28px]">TOTAL STAKED</span>
-              <span className="font-black text-[42px]">12000.50k</span>
+              <span className="font-medium text-[20px] md:text-[28px]">
+                TOTAL STAKED
+              </span>
+              <span className="font-black text-[30px] md:text-[42px]">
+                12000.50k
+              </span>
             </div>
             <div className="flex flex-col text-bluex w-[300px]">
-              <span className="font-medium text-[28px]">REWARDS PAID</span>
-              <span className="font-black text-[42px]">12000.50k</span>
+              <span className="font-medium text-[20px] md:text-[28px]">
+                REWARDS PAID
+              </span>
+              <span className="font-black text-[30px] md:text-[42px]">
+                12000.50k
+              </span>
             </div>
             <div className="flex flex-col text-bluex w-[300px]">
-              <span className="font-medium text-[28px]">SOME OTHER STUFF</span>
-              <span className="font-black text-[42px]">12000.50k</span>
+              <span className="font-medium text-[20px] md:text-[28px]">
+                SOME OTHER STUFF
+              </span>
+              <span className="font-black text-[30px] md:text-[42px]">
+                12000.50k
+              </span>
             </div>
           </div>
         </div>
       </section>
       <section>
         <div className="flex flex-row justify-between items-center w-full px-4 pr-10 py-6  bg-bluex rounded-[8px] shadow-lg">
-          <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <Image src="/logo-white.svg" width={20} height={20} alt="logo" />
             <span className="font-bold text-white">Charts</span>
           </div>
 
-          <div className="flex items-center gap-10">
-            <div className="flex flex-row items-center justify-between text-[14px] xl:text-[12px] font-medium gap-2 xl:gap-4">
+          <div className="flex w-full justify-between md:justify-start items-center md:gap-10">
+            <div className="flex flex-row items-center justify-between text-[12px] xl:text-[12px] font-medium gap-2 xl:gap-4">
               {periods.map((item, index) => (
                 <button
                   key={index}
@@ -209,8 +221,8 @@ export default function Dashboard() {
                 </button>
               ))}
             </div>
-            <div className="w-1 border-r border-white h-4" />
-            <div className="flex flex-row items-center justify-between text-[14px] xl:text-[16px] font-medium gap-2 xl:gap-10">
+            <div className="hidden md:block w-1 border-r border-white h-4" />
+            <div className="flex flex-row items-center justify-between text-[12px] xl:text-[16px] font-medium gap-2 xl:gap-10">
               {filters.map((item, index) => (
                 <button
                   key={index}

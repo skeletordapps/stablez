@@ -14,9 +14,34 @@ const tabs = ["Stake", "Unstake"];
 export default function Farm({ params }: { params: { id: string } }) {
   // return <div>Farm: {params.id}</div>;
   const [tab, setTab] = useState(0);
+  const [inputValue, setInputValue] = useState("");
+
+  const onInputChange = (value: string) => {
+    const re = new RegExp("^[+]?([0-9]+([.][0-9]*)?|[.][0-9]+)$");
+
+    if (value === "" || re.test(value)) {
+      setInputValue(value);
+    }
+
+    return false;
+  };
+
   return (
-    <main>
-      <div className="flex flex-row items-center justify-center w-full px-4 py-4 text-[16px] font-medium gap-10 bg-slate-700 rounded-[8px] shadow-lg mt-10 mb-2">
+    <main className="flex flex-col w-full 2xl:max-w-[500px] text-center mb-24">
+      <section className="flex items-center justify-between w-full mt-10 md:mt-[87px] mb-[38px]">
+        {/* FARMS RESUME */}
+        <div className="w-full flex flex-col justify-between text-white text-center">
+          <h3
+            className={`font-medium text-[28px] text-bluex ${roboto.className}`}
+          >
+            Earn while staking
+          </h3>
+          <span className="font-light text-[14px] text-[#3E3E3E]">
+            Stake your LP tokens to earn rewards.
+          </span>
+        </div>
+      </section>
+      <div className="flex flex-row items-center justify-center w-full px-4 py-4 text-[16px] font-medium gap-10 bg-slate-700 md:rounded-[8px] shadow-lg xl:mt-10 mb-2">
         {tabs.map((item, index) => (
           <button
             key={index}
@@ -25,7 +50,7 @@ export default function Farm({ params }: { params: { id: string } }) {
                   ${
                     index === tab
                       ? " text-white border-b  hover:opacity-90"
-                      : " text-blue-400  hover:text-white"
+                      : " text-white/80  hover:text-white"
                   }
                   `}
           >
@@ -33,10 +58,10 @@ export default function Farm({ params }: { params: { id: string } }) {
           </button>
         ))}
       </div>
-      <div className="flex flex-col bg-white/70 border border-bluex/30 w-full rounded-[8px] shadow-lg mb-10">
-        <div className="flex flex-col">
+      <div className="flex flex-col bg-white/70 border border-bluex/30 w-full md:rounded-[8px] shadow-lg mb-10">
+        <div className="flex flex-col w-full">
           <div
-            className={`flex items-center text-bluex font-medium px-8 pt-8 gap-[200px] ${roboto.className}`}
+            className={`flex items-center w-full text-bluex font-medium px-4 md:px-8 pt-8 justify-between ${roboto.className}`}
           >
             <div className="flex items-center">
               <div className="w-[28px]">{usdc}</div>
@@ -47,29 +72,46 @@ export default function Farm({ params }: { params: { id: string } }) {
               APR: <span className="text-slate-700">130%</span>
             </p>
           </div>
-          <div className="flex items-center justify-between text-white/80 text-[14px] p-8 gap-3 mt-10 bg-bluex">
+          <div className="flex items-center justify-between text-white/80 text-[14px] py-8 px-4 md:px-8 gap-3 mt-10 bg-bluex">
             <p className="flex flex-col">
               <span>Total Staked</span>
-              <span className="text-white">123123123K</span>
+              <span className="text-white">
+                {Number(100000).toLocaleString("en-us", {
+                  maximumFractionDigits: 2,
+                })}
+              </span>
             </p>
             <p className="flex flex-col text-end">
               <span>My Stake</span>
-              <span className="text-white">123123123K</span>
+              <span className="text-white">
+                {Number(100000).toLocaleString("en-us", {
+                  maximumFractionDigits: 2,
+                })}
+              </span>
             </p>
           </div>
         </div>
-        <div className="flex flex-col p-8 mt-4 gap-4">
+        <div className="flex flex-col py-8 px-4 md:px-8 mt-4 gap-4">
           <p
             className={`text-end font-light text-[14px] mb-[-12px] pr-1 text-slate-500 ${roboto.className}`}
           >
             {tab === 0 ? "Available:" : "Staked:"}{" "}
-            <span className="text-slate-700">10000k</span>
+            <button
+              className="text-slate-700 hover:text-bluex"
+              onClick={() => onInputChange(Number(1000).toString())}
+            >
+              {Number(1000).toLocaleString("en-us", {
+                maximumFractionDigits: 2,
+              })}
+            </button>
           </p>
           <div className="relative">
             <input
               type="text"
               placeholder="Enter the amount"
               className="w-full bg-transparent border border-slate-600 placeholder-slate-600 p-6 text-black rounded-[8px] text-[14px]"
+              onChange={(e) => onInputChange(e.target.value)}
+              value={inputValue}
             />
             <div className="flex items-center absolute top-[25px] right-4">
               <div className="w-[22px]">{usdc}</div>

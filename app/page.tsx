@@ -67,14 +67,14 @@ const secondStage = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full max-w-[1600px] px-[70px]">
+    <main className="flex flex-col w-full max-w-[1600px] px-4 md:px-[70px]">
       <section className="mt-[87px] mb-[78px] text-center">
         <div className="flex flex-col justify-center items-center gap-20">
           <p className="text-[#7479A3] font-medium text-sm mb-[-60px]">
             WELCOME TO STABLE-X
           </p>
           <p
-            className={`text-[50px] text-[#090E34] leading-[66px] max-w-[560px] ${roboto.className}`}
+            className={`text-[50px] text-[#090E34] leading-[56px] md:leading-[66px] max-w-[560px] ${roboto.className}`}
           >
             The leading yield booster for stable and{" "}
             <span className="text-[#7479A3]">LSDFI</span> assets built
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col justify-center items-center bg-gradient-to-r from-transparent via-bluex/10 to-transparent xl:px-[70px] border-b border-bluex/[24%]">
-        <div className="flex flex-col my-[78px] w-full">
+        <div className="flex flex-col my-[48px] md:my-[78px] w-full">
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}
           >
@@ -149,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-[100px] mb-[100px] xl:px-[70px]">
+      <section className="flex flex-col justify-center items-center mt-[50px] md:mt-[100px] mb-[100px] xl:px-[70px]">
         <div className="flex flex-col w-full">
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}
@@ -188,7 +188,7 @@ export default function Home() {
           </div>
 
           {/* JOIN US */}
-          <div className="flex gap-5 items-center mt-[100px]">
+          <div className="flex gap-5 items-center mt-[50px] md:mt-[100px]">
             <Image
               src="/symbols-small.svg"
               width={115}

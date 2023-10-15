@@ -10,8 +10,8 @@ const roboto = Roboto_Condensed({
 
 export default function Footer() {
   return (
-    <main className="flex flex-col pt-[100px] pb-[60px] justify-center items-center w-full bg-bluex">
-      <div className="flex flex-col w-full max-w-[1600px] px-[70px] gap-4">
+    <main className="flex flex-col pt-[60px] xl:pt-[100px] pb-[60px] justify-center items-center w-full bg-bluex">
+      <div className="flex flex-col w-full max-w-[1600px] px-4 xl:px-[70px] gap-4">
         <div className="flex flex-row justify-between items-center border-b border-white pb-[20px] w-full px-[10px] text-white">
           <div className="flex flex-row items-center gap-5">
             <Link href={routes[0].href} className="hover:opacity-75">
@@ -24,8 +24,8 @@ export default function Footer() {
               {routes[2].title}
             </Link>
           </div>
-          <div className="flex flex-row items-center gap-2">
-            {/* <Link href="/" className="hover:opacity-75">
+          {/* <div className="flex flex-row items-center gap-2">
+            <Link href="/" className="hover:opacity-75">
               <Image
                 src="/icon-template.svg"
                 width={25}
@@ -33,10 +33,10 @@ export default function Footer() {
                 alt="social"
                 className="mb-[2px]"
               />
-            </Link> */}
-          </div>
+            </Link>
+          </div> */}
         </div>
-        <div className="flex flex-row justify-between items-center w-full px-[10px] text-white">
+        <div className="flex flex-row justify-between items-center w-full px-[10px] text-white ">
           <div className="flex flex-row items-center gap-5">
             <Link href={routes[1].href} className="hover:opacity-75">
               {routes[3].title}
@@ -50,7 +50,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex flex-row justify-between items-center w-full px-[10px] mt-[100px] text-[14px]">
+        <div className="flex flex-col xl:flex-row justify-between items-center w-full px-[10px] mt-[100px] text-[14px] gap-2 xl:gap-0">
           <span className={`text-white tracking-[3px] ${roboto.className}`}>
             2023 © Stable-X Finance
           </span>

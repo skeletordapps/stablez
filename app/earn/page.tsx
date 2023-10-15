@@ -103,9 +103,9 @@ export default function Earn() {
   const [page, setPage] = useState(1);
   const [hover, setHover] = useState(-1);
   return (
-    <main className="flex flex-col w-full max-w-[1600px] px-[120px] text-center mb-24">
+    <main className="flex flex-col w-full max-w-[1600px] px-4 xl:px-[120px] text-center mb-24">
       {/* TOP SECTION */}
-      <section className="flex items-center justify-between w-full mt-[87px] mb-[38px]">
+      <section className="flex items-center justify-between w-full mt-10 md:mt-[87px] mb-[38px]">
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white">
           <h3
@@ -118,7 +118,7 @@ export default function Earn() {
             farms.
           </span>
 
-          <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-24">
+          <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-10 md:mt-24">
             <div className="flex flex-col bg-gradient-to-br from-bluex/50 via-bluex to-bluex w-full h-[400px] rounded-[8px] shadow-lg">
               <div className="flex flex-col text-white p-8 border-b-2">
                 <span className="font-medium text-[28px]">YOUR STAKINGS</span>
@@ -168,7 +168,7 @@ export default function Earn() {
         <div className="flex flex-col">
           <div className="">
             {/* FILTERS */}
-            <div className="flex flex-row justify-between items-center w-full px-4 pr-10 py-6 bg-bluex rounded-[8px] shadow-lg">
+            <div className="flex flex-col lg:flex-row justify-between items-center w-full px-4 pr-10 py-6 bg-bluex rounded-[8px] shadow-lg gap-10 lg:gap-0">
               <div className="relative">
                 <input
                   type="text"
@@ -184,7 +184,7 @@ export default function Earn() {
                 />
               </div>
 
-              <div className="flex flex-row items-center justify-between text-[16px] font-medium gap-10">
+              <div className="flex flex-row items-center justify-between text-[12px] md:text-[16px] font-medium gap-3 lg:gap-10">
                 {filters.map((item, index) => (
                   <button
                     key={index}
@@ -219,16 +219,16 @@ export default function Earn() {
             </div>
           </div>
           {/* LIST ITEMS */}
-          <div className="flex flex-col w-full gap-[2px]">
+          <div className="flex flex-col w-full gap-[2px] mt-5 xl:mt-0">
             {farms.map((farm, index) => (
               <div
                 key={index}
-                className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluex border even:border-blue-100 odd:border-bluex/10 rounded-[8px] py-4 text-[14px] text-right`}
+                className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluex border even:border-blue-100 odd:border-bluex/10 rounded-[8px] py-4 text-[14px] text-start xl:text-right`}
                 onMouseEnter={() => setHover(index)}
                 onMouseLeave={() => setHover(-1)}
               >
-                <div className="flex flex-col xl:flex-row w-full h-full items-center px-8">
-                  <div className="flex items-center">
+                <div className="flex flex-col xl:flex-row w-full h-full items-center px-8 gap-1 xl:gap-0">
+                  <div className="flex items-center w-full xl:w-auto mb-4 xl:mb-0">
                     <div className="w-[28px] z-10 drop-shadow-md">{usdc}</div>
                     <div className="w-[28px] ml-[-10px] drop-shadow-md">
                       {fusdt}
@@ -238,7 +238,7 @@ export default function Earn() {
                     </span>
                   </div>
 
-                  <div className="flex flex-col gap-1 min-w-[280px]">
+                  <div className="flex flex-col gap-1 w-full xl:min-w-[280px]">
                     <p>
                       <span
                         className={`mr-1 text-[12px]  ${
@@ -260,7 +260,7 @@ export default function Earn() {
                       {farm.tvl}
                     </p>
                   </div>
-                  <div className="flex flex-col gap-1 min-w-[340px]">
+                  <div className="flex flex-col gap-1 w-full xl:min-w-[340px]">
                     <p>
                       <span
                         className={`mr-1 text-[12px]  ${
@@ -313,7 +313,7 @@ export default function Earn() {
 
                   <Link
                     href={`/earn/${index + 1}`}
-                    className={`transition-all bg-bluex min-w-[100px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluex border hover:scale-[1.02] gap-3 ${roboto.className}`}
+                    className={`transition-all bg-bluex w-full xl:min-w-[100px] xl:ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluex border hover:scale-[1.02] gap-3 mt-6 xl:mt-0 ${roboto.className}`}
                   >
                     {piggy}
                     <span>Earn</span>
@@ -324,7 +324,7 @@ export default function Earn() {
           </div>
 
           {/* PAGINATOR */}
-          <div className="flex flex-row justify-between items-center px-2 my-10">
+          <div className="flex flex-col md:flex-row justify-between items-center px-2 my-10 gap-4 md:gap-0">
             <span className="text-black font-medium text-[16px]">
               Showing 25 out of 58 pools...
             </span>
