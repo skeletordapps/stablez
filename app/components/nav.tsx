@@ -95,7 +95,7 @@ export default function Nav() {
           onMouseLeave={() => setOpen(false)}
         >
           <div className="absolute top-[70px] right-0 w-full px-4">
-            <div className="text-slate-600 flex justify-center items-center flex-wrap gap-10 text-[14px] bg-white/60 backdrop-blur-[8px] shadow-xl py-10 rounded-b-xl border border-t-0 border-bluex/[24%]">
+            <div className="text-slate-600 flex justify-center items-center flex-wrap gap-10 text-[14px] bg-white/40 backdrop-blur-[8px] shadow-2xl py-10 rounded-b-xl">
               {routes.map((item, index) => (
                 <Link
                   key={index}

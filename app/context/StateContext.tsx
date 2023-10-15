@@ -25,7 +25,6 @@ export const StateProvider = ({ children }: Props) => {
         : pathname === item.href
     )!;
 
-    console.log(route);
     setPage(route.href);
   }, [pathname]);
 

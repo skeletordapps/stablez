@@ -119,7 +119,7 @@ export default function Earn() {
           </span>
 
           <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-10 md:mt-24">
-            <div className="flex flex-col bg-gradient-to-br from-bluex/50 via-bluex to-bluex w-full h-[400px] rounded-[8px] shadow-lg">
+            <div className="flex flex-col bg-gradient-to-br from-bluex/50 via-bluex/60 to-bluex w-full h-[400px] rounded-[8px] shadow-lg">
               <div className="flex flex-col text-white p-8 border-b-2">
                 <span className="font-medium text-[28px]">YOUR STAKINGS</span>
                 <span className="font-black text-[42px]">12000.50k</span>

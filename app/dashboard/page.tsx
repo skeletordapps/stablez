@@ -43,6 +43,7 @@ export default function Dashboard() {
   const [page, setPage] = useState(1);
 
   const options = {
+    responsive: true,
     plugins: {
       legend: {
         display: false,
@@ -86,6 +87,8 @@ export default function Dashboard() {
   };
 
   const barOptions = {
+    responsive: true,
+    // maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "bottom",
@@ -168,28 +171,28 @@ export default function Dashboard() {
           <span className="font-light text-[14px] text-[#3E3E3E]">
             A super fancy text describing this page
           </span>
-          <div className="flex flex-col xl:flex-row justify-center items-center gap-10 xl:gap-20 font-medium text-[13px] pt-[60px]">
+          <div className="flex justify-center items-center gap-2 xl:gap-20 font-medium text-[13px] pt-[60px]">
             <div className="flex flex-col text-bluex w-[300px]">
-              <span className="font-medium text-[20px] md:text-[28px]">
+              <span className="font-medium text-[12px] lg:text-[28px]">
                 TOTAL STAKED
               </span>
-              <span className="font-black text-[30px] md:text-[42px]">
+              <span className="font-black text-[16px] md:text-[32px]">
                 12000.50k
               </span>
             </div>
             <div className="flex flex-col text-bluex w-[300px]">
-              <span className="font-medium text-[20px] md:text-[28px]">
+              <span className="font-medium text-[12px] lg:text-[28px]">
                 REWARDS PAID
               </span>
-              <span className="font-black text-[30px] md:text-[42px]">
+              <span className="font-black text-[16px] md:text-[32px]">
                 12000.50k
               </span>
             </div>
             <div className="flex flex-col text-bluex w-[300px]">
-              <span className="font-medium text-[20px] md:text-[28px]">
-                SOME OTHER STUFF
+              <span className="font-medium text-[12px] lg:text-[28px]">
+                OTHER STUFF
               </span>
-              <span className="font-black text-[30px] md:text-[42px]">
+              <span className="font-black text-[16px] md:text-[32px]">
                 12000.50k
               </span>
             </div>
@@ -198,13 +201,13 @@ export default function Dashboard() {
       </section>
       <section>
         <div className="flex flex-row justify-between items-center w-full px-4 pr-10 py-6  bg-bluex rounded-[8px] shadow-lg">
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex w-full items-center gap-3">
             <Image src="/logo-white.svg" width={20} height={20} alt="logo" />
             <span className="font-bold text-white">Charts</span>
           </div>
 
-          <div className="flex w-full justify-between md:justify-start items-center md:gap-10">
-            <div className="flex flex-row items-center justify-between text-[12px] xl:text-[12px] font-medium gap-2 xl:gap-4">
+          <div className="flex flex-col md:flex-row w-full justify-between md:justify-end items-center gap-5 md:gap-10">
+            <div className="flex flex-row items-center justify-between text-[12px] xl:text-[14px] font-medium gap-4">
               {periods.map((item, index) => (
                 <button
                   key={index}
@@ -221,8 +224,8 @@ export default function Dashboard() {
                 </button>
               ))}
             </div>
-            <div className="hidden md:block w-1 border-r border-white h-4" />
-            <div className="flex flex-row items-center justify-between text-[12px] xl:text-[16px] font-medium gap-2 xl:gap-10">
+            <div className="w-full md:w-1 bg-white/20 md:bg-white md:bg-transparent md:border-r border-white h-[1px] md:h-4" />
+            <div className="flex flex-row items-center justify-between text-[12px] xl:text-[14px] font-medium gap-2 xl:gap-4">
               {filters.map((item, index) => (
                 <button
                   key={index}
@@ -243,6 +246,7 @@ export default function Dashboard() {
         </div>
         {filter === 0 && (
           <Line
+            // height={400}
             data={data}
             options={options}
             className="bg-white/50 w-full p-3 rounded-[8px] mt-3 shadow-xl"

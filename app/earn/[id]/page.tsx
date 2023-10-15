@@ -27,7 +27,7 @@ export default function Farm({ params }: { params: { id: string } }) {
   };
 
   return (
-    <main className="flex flex-col w-full 2xl:max-w-[500px] text-center mb-24">
+    <main className="flex flex-col w-full xl:max-w-[500px] text-center mb-24">
       <section className="flex items-center justify-between w-full mt-10 md:mt-[87px] mb-[38px]">
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white text-center">
