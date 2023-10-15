@@ -23,6 +23,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@headlessui/react": "^1.7.17",
     "chart.js": "^4.4.0",
     "react-chartjs-2": "^5.2.0"
   }
