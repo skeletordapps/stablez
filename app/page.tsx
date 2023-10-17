@@ -19,7 +19,7 @@ const firstStage = [
     iconHref: "/check-circle.svg",
     title: "Protocol Integrations",
     description:
-      "The StableX protocol shall integrate the most prominent protocols across the ecosystem and shall establish mutual partnerships.",
+      "The StableZ protocol shall integrate the most prominent protocols across the ecosystem and shall establish mutual partnerships.",
     bg: "bg-bluex",
   },
   {
@@ -43,7 +43,7 @@ const secondStage = [
     iconHref: "/icon-blue-template.svg",
     title: "Referral System",
     description:
-      "Fellow StableXers join a rallying cry for for others to join the StableX ecosystem - earning up to 10% of their referral's yield.",
+      "Fellow StableZers join a rallying cry for for others to join the StableZ ecosystem - earning up to 10% of their referral's yield.",
   },
   {
     iconHref: "/icon-blue-template.svg",
