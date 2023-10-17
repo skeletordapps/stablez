@@ -12,26 +12,26 @@ const firstStage = [
     iconHref: "/check-circle.svg",
     title: "Yield Booster",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Multiplying your yields through the power of the ve 3.3 flywheel. Users earn our governance token, $STABLEZ, in exchange for their LPs, which are staked on a partner DEX. The tokens earned from our partner DEX are maximally locked and utilized to chase incentives, thereby boosting the underlying yield.",
     bg: "bg-[#000D6C]",
   },
   {
     iconHref: "/check-circle.svg",
     title: "Protocol Integrations",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "The StableX protocol shall integrate the most prominent protocols across the ecosystem and shall establish mutual partnerships.",
     bg: "bg-bluex",
   },
   {
     iconHref: "/check-circle.svg",
-    title: "Audit",
+    title: "Security",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "StableZ shall commence an Immunefi bounty program following the conclusion of its Public Sale, incentivizing white-hat developers to rigorously test the code in exchange for a bounty. The vulnerabilities will be categorized into three tiers: critical, medium, and low risk.",
     bg: "bg-[#000D6C]",
   },
   {
     iconHref: "/check-circle.svg",
-    title: "Stable-X Staking",
+    title: "StableZ Staking",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     bg: "bg-bluex",
@@ -43,7 +43,7 @@ const secondStage = [
     iconHref: "/icon-blue-template.svg",
     title: "Referral System",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Fellow StableXers join a rallying cry for for others to join the StableX ecosystem - earning up to 10% of their referral's yield.",
   },
   {
     iconHref: "/icon-blue-template.svg",
@@ -71,7 +71,7 @@ export default function Home() {
       <section className="mt-[87px] mb-[78px] text-center">
         <div className="flex flex-col justify-center items-center gap-20">
           <p className="text-[#7479A3] font-medium text-sm mb-[-60px]">
-            WELCOME TO STABLE-X
+            WELCOME TO STABLEZ
           </p>
           <p
             className={`text-[50px] text-[#090E34] leading-[56px] md:leading-[66px] max-w-[560px] ${roboto.className}`}
@@ -86,20 +86,20 @@ export default function Home() {
             <p className="text-[#3E3E3E] text-[16px] max-w-[700px] font-medium mt-10">
               LPs are incentivized to engage with our ecosystem through the
               utilization of our proprietary token -{" "}
-              <span className="text-[#000D6C] font-bold">Stable-X</span> - as a
-              valuable incentive. Stake Stable-X and get access to lucrative
+              <span className="text-[#000D6C] font-bold">StableZ</span> - as a
+              valuable incentive. Stake StableZ and get access to lucrative
               yield opportunities.
             </p>
 
             <p className="text-[#3E3E3E] text-[16px] max-w-[700px] mb-4 font-medium">
               Protocol Revenue stems from liquidity mining incentives generated
               from our partner pools. 30% of this revenue is used to reward
-              Stable-X stakers, with the remaining 70% strategically allocated
-              to enhance our governance holdings within partner protocols.
+              StableZ stakers, with the remaining 70% strategically allocated to
+              enhance our governance holdings within partner protocols.
             </p>
 
             <p className="text-[#3E3E3E] text-[16px] max-w-[700px] mb-4 font-medium">
-              The <span className="text-[#000D6C] font-bold">Stable-X DAO</span>{" "}
+              The <span className="text-[#000D6C] font-bold">StableZ DAO</span>{" "}
               undertakes governance decisions and benefits from a share of the
               value accruals therein.
             </p>
@@ -111,11 +111,11 @@ export default function Home() {
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}
           >
-            Look what is coming...
+            What we have in store
           </h3>
           <span className="font-light text-[14px] text-[#3E3E3E]">
-            We will also develop more services and products to fuel defi on{" "}
-            <span className="text-bluex font-bold">#base</span>
+            We plan on delivering a complete suite of DeFi products to fuel our
+            growth on <span className="text-bluex font-bold">#base</span>
           </span>
 
           <div className="flex flex-col xl:flex-row xl:justify-between items-center mt-[55px] gap-5">

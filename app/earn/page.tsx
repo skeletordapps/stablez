@@ -111,10 +111,10 @@ export default function Earn() {
           <h3
             className={`font-medium text-[28px] text-bluex ${roboto.className}`}
           >
-            Farms Resumed Values
+            Farms Statistics
           </h3>
           <span className="font-light text-[14px] text-[#3E3E3E]">
-            There are currently 34 active farms, 20 stable and 14 volatile
+            There are currently 34 active farms, with 20 stable and 14 volatile
             farms.
           </span>
 

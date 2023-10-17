@@ -8,9 +8,9 @@ import StateProvider from "./context/StateContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stable-X",
+  title: "StableZ",
   description:
-    "The main liquidity booster for stable assets and lsdfi exclusively on Base built on Aerodrome.",
+    "The main liquidity booster for stable assets and lsdfi exclusively on Base.",
 };
 
 export default function RootLayout({

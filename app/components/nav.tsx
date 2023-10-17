@@ -27,17 +27,19 @@ export default function Nav() {
           </Link>
           <div className="flex items-center justify-center w-full">
             <div className="text-slate-600 flex items-center gap-14 text-[16px]">
-              {routes.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={`hover:text-bluex hover:border-b border-bluex ${
-                    item.href === page && "text-bluex border-b"
-                  }`}
-                >
-                  {item.title}
-                </Link>
-              ))}
+              {routes
+                .filter((item) => item.title !== "Legal Disclaimer")
+                .map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className={`hover:text-bluex hover:border-b border-bluex ${
+                      item.href === page && "text-bluex border-b"
+                    }`}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
             </div>
           </div>
           <button

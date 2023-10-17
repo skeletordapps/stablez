@@ -5,3 +5,9 @@
 .radius {
   border-radius: 8px !important;
 }
+
+wui-connect-button {
+  width: "140px" !important;
+  background-color: red !important;
+  color: red !important;
+}
