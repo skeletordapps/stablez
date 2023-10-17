@@ -206,7 +206,7 @@ export default function Earn() {
               className={`hidden xl:flex flex-row items-center w-full py-6 mt-5 px-8 text-[16px] text-bluex text-right ${roboto.className}`}
             >
               <span className="w-[382px] text-left">Pair</span>
-              <button className="underline hover:opacity-80 w-[100px] text-right">
+              <button className="underline hover:opacity-80 w-[116px] text-right">
                 Farm Details
               </button>
               <button className="underline hover:opacity-80 w-[338px] text-right">
@@ -313,7 +313,7 @@ export default function Earn() {
 
                   <Link
                     href={`/earn/${index + 1}`}
-                    className={`transition-all bg-bluex w-full xl:min-w-[100px] xl:ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluex border hover:scale-[1.02] gap-3 mt-6 xl:mt-0 ${roboto.className}`}
+                    className={`transition-all bg-bluex w-full xl:min-w-[100px] xl:max-w-[100px] xl:ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluex border hover:scale-[1.02] gap-3 mt-6 xl:mt-0 ${roboto.className}`}
                   >
                     {piggy}
                     <span>Earn</span>
@@ -325,7 +325,7 @@ export default function Earn() {
 
           {/* PAGINATOR */}
           <div className="flex flex-col md:flex-row justify-between items-center px-2 my-10 gap-4 md:gap-0">
-            <span className="text-black font-medium text-[16px]">
+            <span className="text-black font-light text-[14px]">
               Showing 25 out of 58 pools...
             </span>
             <div className="flex flex-row items-center justify-between  text-[14px] font-medium border border-[#2F3B89]/30 rounded-[8px]">
