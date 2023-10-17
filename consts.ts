@@ -18,6 +18,10 @@ export const routes: route[] = [
     title: "Docs",
     href: "#",
   },
+  {
+    title: "Legal Disclaimer",
+    href: "/legal-disclaimer",
+  },
 ];
 
 export type social = { title: string; href: string; icon: any };

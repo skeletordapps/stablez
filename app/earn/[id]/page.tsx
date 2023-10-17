@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { fusdt, usdc } from "@/public/svg";
 import { Roboto_Condensed } from "next/font/google";
 import { useState } from "react";
@@ -73,7 +74,7 @@ export default function Farm({ params }: { params: { id: string } }) {
             </p>
           </div>
           <div className="flex items-center justify-between text-white/80 text-[14px] py-8 px-4 md:px-8 gap-3 mt-10 bg-bluex">
-            <p className="flex flex-col">
+            <p className="flex flex-col text-start">
               <span>Total Staked</span>
               <span className="text-white">
                 {Number(100000).toLocaleString("en-us", {
@@ -127,6 +128,24 @@ export default function Farm({ params }: { params: { id: string } }) {
           </button>
         </div>
       </div>
+      <Link href="/earn" className="flex flex-row gap-3 items-center justify-center">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+          ></path>
+        </svg>
+        Back to the list
+      </Link>
     </main>
   );
 }

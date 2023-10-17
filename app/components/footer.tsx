@@ -52,9 +52,12 @@ export default function Footer() {
         </div>
         <div className="flex flex-col xl:flex-row justify-between items-center w-full px-[10px] mt-[100px] text-[14px] gap-2 xl:gap-0">
           <span className={`text-white tracking-[3px] ${roboto.className}`}>
-            2023 © Stable-X Finance
+            2023 © StableZ Finance
           </span>
-          <Link href="/" className="text-white border-b hover:opacity-75">
+          <Link
+            href="/legal-disclaimer"
+            className="text-white border-b hover:opacity-75"
+          >
             Legal Disclaimer
           </Link>
         </div>

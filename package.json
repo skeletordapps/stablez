@@ -24,7 +24,11 @@
   },
   "devDependencies": {
     "@headlessui/react": "^1.7.17",
+    "@rainbow-me/rainbowkit": "^1.1.2",
     "chart.js": "^4.4.0",
-    "react-chartjs-2": "^5.2.0"
+    "lodash.merge": "^4.6.2",
+    "react-chartjs-2": "^5.2.0",
+    "viem": "^1.16.6",
+    "wagmi": "^1.4.3"
   }
 }
