@@ -45,7 +45,24 @@ export default function Footer() {
           <div className="flex flex-row items-center gap-4">
             {socials.map((item, index) => (
               <Link key={index} href={item.href} className="hover:opacity-75">
-                {item.icon}
+                <Image
+                  src={item.src}
+                  width={
+                    item.title === "Twitter-X"
+                      ? 16
+                      : item.title === "Telegram"
+                      ? 18
+                      : 20
+                  }
+                  height={
+                    item.title === "Twitter-X"
+                      ? 16
+                      : item.title === "Telegram"
+                      ? 18
+                      : 20
+                  }
+                  alt={item.title}
+                />
               </Link>
             ))}
           </div>

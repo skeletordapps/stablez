@@ -24,23 +24,23 @@ export const routes: route[] = [
   },
 ];
 
-export type social = { title: string; href: string; icon: any };
+export type social = { title: string; href: string; src: string };
 
 export const socials: social[] = [
   {
     title: "Twitter-X",
     href: "#",
-    icon: twitterX,
+    src: "/socials/twitter-x.svg",
   },
   {
     title: "Telegram",
     href: "#",
-    icon: telegram,
+    src: "/socials/telegram.svg",
   },
   {
     title: "Discord",
     href: "#",
-    icon: discord,
+    src: "/socials/discord.svg",
   },
 ];
 

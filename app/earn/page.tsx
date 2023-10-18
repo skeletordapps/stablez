@@ -205,11 +205,11 @@ export default function Earn() {
             <div
               className={`hidden xl:flex flex-row items-center w-full py-6 mt-5 px-8 text-[16px] text-bluez text-right ${roboto.className}`}
             >
-              <span className="w-[382px] text-left">Pair</span>
+              <span className="w-[304px] 2xl:w-[382px] text-left">Pair</span>
               <button className="underline hover:opacity-80 w-[116px] text-right">
                 Farm Details
               </button>
-              <button className="underline hover:opacity-80 w-[338px] text-right">
+              <button className="underline hover:opacity-80 w-[278px] 2xl:w-[338px] text-right">
                 Earning
               </button>
               <button className="underline hover:opacity-80 flex-1 text-right">
@@ -238,7 +238,7 @@ export default function Earn() {
                     </span>
                   </div>
 
-                  <div className="flex flex-col gap-1 w-full xl:min-w-[280px]">
+                  <div className="flex flex-col gap-1 w-full xl:min-w-[220px] 2xl:min-w-[280px]">
                     <p>
                       <span
                         className={`mr-1 text-[12px]  ${
@@ -260,7 +260,7 @@ export default function Earn() {
                       {farm.tvl}
                     </p>
                   </div>
-                  <div className="flex flex-col gap-1 w-full xl:min-w-[340px]">
+                  <div className="flex flex-col gap-1 w-full xl:min-w-[280px] 2xl:min-w-[340px]">
                     <p>
                       <span
                         className={`mr-1 text-[12px]  ${
