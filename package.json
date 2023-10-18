@@ -26,7 +26,11 @@
     "@headlessui/react": "^1.7.17",
     "@rainbow-me/rainbowkit": "^1.1.2",
     "chart.js": "^4.4.0",
+    "encoding": "^0.1.13",
+    "ethers": "^6.8.0",
     "lodash.merge": "^4.6.2",
+    "lokijs": "^1.5.12",
+    "pino-pretty": "^10.2.3",
     "react-chartjs-2": "^5.2.0",
     "viem": "^1.16.6",
     "wagmi": "^1.4.3"

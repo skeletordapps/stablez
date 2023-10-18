@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Roboto_Condensed } from "next/font/google";
+import { useContext, useEffect } from "react";
+import { StateContext } from "./context/StateContext";
+import { balanceOf } from "./contracts/balanceOf";
 
 const roboto = Roboto_Condensed({
   weight: ["300", "400", "700"],
@@ -20,7 +24,7 @@ const firstStage = [
     title: "Protocol Integrations",
     description:
       "The StableZ protocol shall integrate the most prominent protocols across the ecosystem and shall establish mutual partnerships.",
-    bg: "bg-bluex",
+    bg: "bg-bluez",
   },
   {
     iconHref: "/check-circle.svg",
@@ -34,7 +38,7 @@ const firstStage = [
     title: "StableZ Staking",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc bibendum interdum dui at mattis. Cras ut nulla suscipit nisi elementum auctor id pellentesque tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    bg: "bg-bluex",
+    bg: "bg-bluez",
   },
 ];
 
@@ -66,6 +70,21 @@ const secondStage = [
 ];
 
 export default function Home() {
+  const { signer } = useContext(StateContext);
+
+  const balance = async () => {
+    if (signer)
+      await balanceOf(
+        "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
+        "0xfDAd0872bed539b943d5704be24A35A322B940D9",
+        signer
+      );
+  };
+
+  useEffect(() => {
+    if (signer) balance();
+  }, [signer]);
+
   return (
     <main className="flex flex-col w-full max-w-[1600px] px-4 md:px-[70px]">
       <section className="mt-[87px] mb-[78px] text-center">
@@ -78,7 +97,7 @@ export default function Home() {
           >
             The leading yield booster for stable and{" "}
             <span className="text-[#7479A3]">LSDFI</span> assets built
-            exclusively for <span className="text-bluex">Base</span>.
+            exclusively for <span className="text-bluez">Base</span>.
           </p>
 
           <div className="flex flex-col items-center gap-4 leading-[30px]">
@@ -106,16 +125,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col justify-center items-center bg-gradient-to-r from-transparent via-bluex/10 to-transparent xl:px-[70px] border-b border-bluex/[24%]">
+      <section className="flex flex-col justify-center items-center bg-gradient-to-r from-transparent via-bluez/10 to-transparent xl:px-[70px] border-b border-bluez/[24%]">
         <div className="flex flex-col my-[48px] md:my-[78px] w-full">
           <h3
-            className={`font-medium text-[28px] text-bluex ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
           >
             What we have in store
           </h3>
           <span className="font-light text-[14px] text-[#3E3E3E]">
             We plan on delivering a complete suite of DeFi products to fuel our
-            growth on <span className="text-bluex font-bold">#base</span>
+            growth on <span className="text-bluez font-bold">#base</span>
           </span>
 
           <div className="flex flex-col xl:flex-row xl:justify-between items-center mt-[55px] gap-5">
@@ -152,13 +171,13 @@ export default function Home() {
       <section className="flex flex-col justify-center items-center mt-[50px] md:mt-[100px] mb-[100px] xl:px-[70px]">
         <div className="flex flex-col w-full">
           <h3
-            className={`font-medium text-[28px] text-bluex ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
           >
             Second Stage Development
           </h3>
           <span className="font-light text-[14px] text-[#3E3E3E]">
             See what we plan to keep building after our major features on{" "}
-            <span className="text-bluex font-bold">#base</span>
+            <span className="text-bluez font-bold">#base</span>
           </span>
 
           <div className="flex flex-col xl:flex-row justify-between mt-[50px] gap-[34px]">
@@ -167,7 +186,7 @@ export default function Home() {
                 key={index}
                 className="flex flex-col gap-[10px] xl:w-[365px]"
               >
-                <div className="flex flex-row items-center gap-2 border-b border-bluex/80 pb-[8px] px-[7.5px]">
+                <div className="flex flex-row items-center gap-2 border-b border-bluez/80 pb-[8px] px-[7.5px]">
                   <Image
                     src={item.iconHref}
                     width={25}
@@ -175,7 +194,7 @@ export default function Home() {
                     alt={item.title}
                   />
                   <span
-                    className={`font-medium text-bluex text-[20px] ${roboto.className}`}
+                    className={`font-medium text-bluez text-[20px] ${roboto.className}`}
                   >
                     {item.title}
                   </span>
@@ -197,7 +216,7 @@ export default function Home() {
             />
             <Link
               href="/"
-              className={`font-light text-[35px] text-bluex flex justify-center gap-3 hover:opacity-75 ${roboto.className}`}
+              className={`font-light text-[35px] text-bluez flex justify-center gap-3 hover:opacity-75 ${roboto.className}`}
             >
               <span className="mt-1">JOIN US</span>
               <span>→</span>

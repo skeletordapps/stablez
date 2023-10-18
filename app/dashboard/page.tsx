@@ -164,7 +164,7 @@ export default function Dashboard() {
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white">
           <h3
-            className={`font-medium text-[28px] text-bluex ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
           >
             Dashboard
           </h3>
@@ -172,7 +172,7 @@ export default function Dashboard() {
             A super fancy text describing this page
           </span>
           <div className="flex justify-center items-center gap-2 xl:gap-20 font-medium text-[13px] pt-[60px]">
-            <div className="flex flex-col text-bluex w-[300px]">
+            <div className="flex flex-col text-bluez w-[300px]">
               <span className="font-medium text-[12px] lg:text-[28px]">
                 TOTAL STAKED
               </span>
@@ -180,7 +180,7 @@ export default function Dashboard() {
                 12000.50k
               </span>
             </div>
-            <div className="flex flex-col text-bluex w-[300px]">
+            <div className="flex flex-col text-bluez w-[300px]">
               <span className="font-medium text-[12px] lg:text-[28px]">
                 REWARDS PAID
               </span>
@@ -188,7 +188,7 @@ export default function Dashboard() {
                 12000.50k
               </span>
             </div>
-            <div className="flex flex-col text-bluex w-[300px]">
+            <div className="flex flex-col text-bluez w-[300px]">
               <span className="font-medium text-[12px] lg:text-[28px]">
                 OTHER STUFF
               </span>
@@ -200,7 +200,7 @@ export default function Dashboard() {
         </div>
       </section>
       <section>
-        <div className="flex flex-row justify-between items-center w-full px-4 pr-10 py-6  bg-bluex rounded-[8px] shadow-lg">
+        <div className="flex flex-row justify-between items-center w-full px-4 pr-10 py-6  bg-bluez rounded-[8px] shadow-lg">
           <div className="hidden md:flex w-full items-center gap-3">
             <Image src="/logo-white.svg" width={20} height={20} alt="logo" />
             <span className="font-bold text-white">Charts</span>
@@ -224,7 +224,7 @@ export default function Dashboard() {
                 </button>
               ))}
             </div>
-            <div className="w-full md:w-1 bg-white/20 md:bg-white md:bg-transparent md:border-r border-white h-[1px] md:h-4" />
+            <div className="w-full md:w-[1px] bg-white/20 md:bg-transparent md:border-r border-white/40 h-[1px] md:h-4" />
             <div className="flex flex-row items-center justify-between text-[12px] xl:text-[14px] font-medium gap-2 xl:gap-4">
               {filters.map((item, index) => (
                 <button

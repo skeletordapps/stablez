@@ -33,7 +33,7 @@ export default function Farm({ params }: { params: { id: string } }) {
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white text-center">
           <h3
-            className={`font-medium text-[28px] text-bluex ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
           >
             Earn while staking
           </h3>
@@ -59,10 +59,10 @@ export default function Farm({ params }: { params: { id: string } }) {
           </button>
         ))}
       </div>
-      <div className="flex flex-col bg-white/70 border border-bluex/30 w-full md:rounded-[8px] shadow-lg mb-10">
+      <div className="flex flex-col bg-white/70 border border-bluez/30 w-full md:rounded-[8px] shadow-lg mb-10">
         <div className="flex flex-col w-full">
           <div
-            className={`flex items-center w-full text-bluex font-medium px-4 md:px-8 pt-8 justify-between ${roboto.className}`}
+            className={`flex items-center w-full text-bluez font-medium px-4 md:px-8 pt-8 justify-between ${roboto.className}`}
           >
             <div className="flex items-center">
               <div className="w-[28px]">{usdc}</div>
@@ -73,7 +73,7 @@ export default function Farm({ params }: { params: { id: string } }) {
               APR: <span className="text-slate-700">130%</span>
             </p>
           </div>
-          <div className="flex items-center justify-between text-white/80 text-[14px] py-8 px-4 md:px-8 gap-3 mt-10 bg-bluex">
+          <div className="flex items-center justify-between text-white/80 text-[14px] py-8 px-4 md:px-8 gap-3 mt-10 bg-bluez">
             <p className="flex flex-col text-start">
               <span>Total Staked</span>
               <span className="text-white">
@@ -98,7 +98,7 @@ export default function Farm({ params }: { params: { id: string } }) {
           >
             {tab === 0 ? "Available:" : "Staked:"}{" "}
             <button
-              className="text-slate-700 hover:text-bluex"
+              className="text-slate-700 hover:text-bluez"
               onClick={() => onInputChange(Number(1000).toString())}
             >
               {Number(1000).toLocaleString("en-us", {
@@ -122,13 +122,16 @@ export default function Farm({ params }: { params: { id: string } }) {
           </div>
 
           <button
-            className={`transition-all bg-bluex w-full h-[49px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
+            className={`transition-all bg-bluez w-full h-[49px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
           >
             {tabs[tab]} vAMM-WETH/USDC
           </button>
         </div>
       </div>
-      <Link href="/earn" className="flex flex-row gap-3 items-center justify-center">
+      <Link
+        href="/earn"
+        className="flex flex-row gap-3 items-center justify-center"
+      >
         <svg
           fill="none"
           stroke="currentColor"
@@ -144,7 +147,7 @@ export default function Farm({ params }: { params: { id: string } }) {
             d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
           ></path>
         </svg>
-        Back to the list
+        Back to the Farm's list
       </Link>
     </main>
   );

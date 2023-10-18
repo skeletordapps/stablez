@@ -109,7 +109,7 @@ export default function Earn() {
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white">
           <h3
-            className={`font-medium text-[28px] text-bluex ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
           >
             Farms Statistics
           </h3>
@@ -119,7 +119,7 @@ export default function Earn() {
           </span>
 
           <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-10 md:mt-24">
-            <div className="flex flex-col bg-gradient-to-br from-bluex/50 via-bluex/60 to-bluex w-full h-[400px] rounded-[8px] shadow-lg">
+            <div className="flex flex-col bg-gradient-to-br from-bluez/50 via-bluez/60 to-bluez w-full h-[400px] rounded-[8px] shadow-lg">
               <div className="flex flex-col text-white p-8 border-b-2">
                 <span className="font-medium text-[28px]">YOUR STAKINGS</span>
                 <span className="font-black text-[42px]">12000.50k</span>
@@ -139,16 +139,16 @@ export default function Earn() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col bg-gradient-to-br from-bluex/10 via-bluex/30 to-bluex/30 w-full h-[400px] rounded-[8px] shadow-lg">
-              <div className="flex flex-col text-bluex p-8 border-b-2 border-white">
+            <div className="flex flex-col bg-gradient-to-br from-bluez/10 via-bluez/30 to-bluez/30 w-full h-[400px] rounded-[8px] shadow-lg">
+              <div className="flex flex-col text-bluez p-8 border-b-2 border-white">
                 <span className="font-medium text-[28px]">YOUR REWARDS</span>
                 <span className="font-black text-[42px]">12000.50k</span>
               </div>
-              <div className="flex flex-col text-bluex p-8 gap-3 mt-3">
+              <div className="flex flex-col text-bluez p-8 gap-3 mt-3">
                 {rightInfo.map((item, index) => (
                   <p key={index} className="flex items-center justify-between">
                     <span>{item.title}</span>
-                    <span className="flex flex-1 border-b border-bluex border-dotted mx-2" />
+                    <span className="flex flex-1 border-b border-bluez border-dotted mx-2" />
                     <span>
                       {item.value.toLocaleString("en-us", {
                         maximumFractionDigits: 2,
@@ -168,7 +168,7 @@ export default function Earn() {
         <div className="flex flex-col">
           <div className="">
             {/* FILTERS */}
-            <div className="flex flex-col lg:flex-row justify-between items-center w-full px-4 pr-10 py-6 bg-bluex rounded-[8px] shadow-lg gap-10 lg:gap-0">
+            <div className="flex flex-col lg:flex-row justify-between items-center w-full px-4 pr-10 py-6 bg-bluez rounded-[8px] shadow-lg gap-10 lg:gap-0">
               <div className="relative">
                 <input
                   type="text"
@@ -203,7 +203,7 @@ export default function Earn() {
               </div>
             </div>
             <div
-              className={`hidden xl:flex flex-row items-center w-full py-6 mt-5 px-8 text-[16px] text-bluex text-right ${roboto.className}`}
+              className={`hidden xl:flex flex-row items-center w-full py-6 mt-5 px-8 text-[16px] text-bluez text-right ${roboto.className}`}
             >
               <span className="w-[382px] text-left">Pair</span>
               <button className="underline hover:opacity-80 w-[116px] text-right">
@@ -223,7 +223,7 @@ export default function Earn() {
             {farms.map((farm, index) => (
               <div
                 key={index}
-                className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluex border even:border-blue-100 odd:border-bluex/10 rounded-[8px] py-4 text-[14px] text-start xl:text-right`}
+                className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluez border even:border-blue-100 odd:border-bluez/10 rounded-[8px] py-4 text-[14px] text-start xl:text-right`}
                 onMouseEnter={() => setHover(index)}
                 onMouseLeave={() => setHover(-1)}
               >
@@ -313,7 +313,7 @@ export default function Earn() {
 
                   <Link
                     href={`/earn/${index + 1}`}
-                    className={`transition-all bg-bluex w-full xl:min-w-[100px] xl:max-w-[100px] xl:ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluex border hover:scale-[1.02] gap-3 mt-6 xl:mt-0 ${roboto.className}`}
+                    className={`transition-all bg-bluez w-full xl:min-w-[100px] xl:max-w-[100px] xl:ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluez border hover:scale-[1.02] gap-3 mt-6 xl:mt-0 ${roboto.className}`}
                   >
                     {piggy}
                     <span>Earn</span>
@@ -329,7 +329,7 @@ export default function Earn() {
               Showing 25 out of 58 pools...
             </span>
             <div className="flex flex-row items-center justify-between  text-[14px] font-medium border border-[#2F3B89]/30 rounded-[8px]">
-              <button className="flex flex-row items-center justify-between gap-2 p-2 px-3 rounded-l-[8px] bg-white text-[#2F3B89] hover:bg-bluex hover:text-white">
+              <button className="flex flex-row items-center justify-between gap-2 p-2 px-3 rounded-l-[8px] bg-white text-[#2F3B89] hover:bg-bluez hover:text-white">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -353,15 +353,15 @@ export default function Earn() {
                   onClick={() => setPage(item)}
                   className={`flex flex-row items-center justify-between p-2 px-3 ${
                     page === item
-                      ? "bg-bluex text-white hover:bg-bluex hover:opacity-90"
-                      : "bg-white text-[#2F3B89] hover:bg-bluex/60 hover:text-white/70"
+                      ? "bg-bluez text-white hover:bg-bluez hover:opacity-90"
+                      : "bg-white text-[#2F3B89] hover:bg-bluez/60 hover:text-white/70"
                   }`}
                 >
                   {item}
                 </button>
               ))}
 
-              <button className="flex flex-row items-center justify-between gap-2 p-2 px-3 rounded-r-[8px] bg-white text-[#2F3B89] hover:bg-bluex hover:text-white">
+              <button className="flex flex-row items-center justify-between gap-2 p-2 px-3 rounded-r-[8px] bg-white text-[#2F3B89] hover:bg-bluez hover:text-white">
                 <span>Next</span>
                 <svg
                   fill="none"

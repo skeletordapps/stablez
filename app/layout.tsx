@@ -1,20 +1,11 @@
 "use client";
 import "./globals.css";
-import type { Metadata } from "next";
+import Head from "next/head";
 import { Inter } from "next/font/google";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
 import StateProvider from "./context/StateContext";
-import { Roboto_Condensed } from "next/font/google";
-import Image from "next/image";
 import "@rainbow-me/rainbowkit/styles.css";
-
-const merge = require("lodash.merge");
-
-const roboto = Roboto_Condensed({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-});
 
 import {
   AvatarComponent,
@@ -25,12 +16,13 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { base } from "wagmi/chains";
-import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+
+const merge = require("lodash.merge");
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata: Metadata = {
+// export const metadata = {
 //   title: "StableZ",
 //   description:
 //     "The main liquidity booster for stable assets and lsdfi exclusively on Base.",
@@ -57,22 +49,9 @@ const stablezTheme = merge(lightTheme(), {
   },
 } as Theme);
 
-// const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {
-//   return (
-//     <div className="flex bg-white p-3 rounded-full w-full h-full items-center justify-center">
-//       <Image src="/logo.svg" width={38} height={38} alt="avatar" />
-//     </div>
-//   );
-// };
-
 const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {
   return ensImage ? (
-    <img
-      src={ensImage}
-      width={size}
-      height={size}
-      // style={{ borderRadius: 999 }}
-    />
+    <img src={ensImage} width={size} height={size} />
   ) : (
     <img src="/avatar.svg" width={size} height={size} alt="avatar" />
   );
@@ -85,6 +64,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>StableZ</title>
+        <meta
+          name="description"
+          content="The main liquidity booster for stable assets and lsdfi exclusively on Base."
+          key="desc"
+        />
+      </head>
       <body className={inter.className}>
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider

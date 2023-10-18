@@ -13,7 +13,7 @@ export default function LegalDisclaimer() {
       <div className="flex flex-col justify-center items-center gap-10 py-14">
         <div className="flex flex-col justify-center items-center">
           <h3
-            className={`font-medium text-[28px] text-bluex ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
           >
             Legal Disclaimer
           </h3>
@@ -23,7 +23,7 @@ export default function LegalDisclaimer() {
         </div>
 
         <div
-          className={`flex flex-col justify-center items-center gap-10 bg-bluex/20 text-black/80 p-10 rounded-[8px] shadow-xl font-medium ${roboto.className}`}
+          className={`flex flex-col justify-center items-center gap-10 bg-bluez/20 text-black/80 p-10 rounded-[8px] shadow-xl font-medium max-w-[900px] border border-bluez/30 ${roboto.className}`}
         >
           <p>
             <span className="text-black">
@@ -59,7 +59,7 @@ export default function LegalDisclaimer() {
             using the website, and the contributors shall not be liable for any
             losses resulting from such issues.
           </p>
-          <p className="text-black">
+          <p className="text-black pt-5 border-t border-bluez/30">
             By accessing and using this website, you agree to release the
             contributors from any and all liabilities, claims, damages, losses,
             or expenses arising from or related to your use of the website. The

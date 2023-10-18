@@ -21,7 +21,7 @@ export default function Nav() {
       {/* DESKTOP */}
       <main className="hidden xl:flex w-full max-w-[1600px] px-[70px]">
         <div
-          className={`flex items-center justify-between w-full py-[20px] px-[10px] border-b border-bluex/[24%] ${roboto.className}`}
+          className={`flex items-center justify-between w-full py-[20px] px-[10px] border-b border-bluez/[24%] ${roboto.className}`}
         >
           <Link href="/" className="hover:opacity-75">
             <Image src="/type-logo2.svg" width={139.5} height={26} alt="logo" />
@@ -34,8 +34,8 @@ export default function Nav() {
                   <Link
                     key={index}
                     href={item.href}
-                    className={`hover:text-bluex hover:border-b border-bluex ${
-                      item.href === page && "text-bluex border-b"
+                    className={`hover:text-bluez hover:border-b border-bluez ${
+                      item.href === page && "text-bluez border-b"
                     }`}
                   >
                     {item.title}
@@ -44,7 +44,7 @@ export default function Nav() {
             </div>
           </div>
           {/* <button
-            className={`transition-all bg-bluex min-w-[140px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
+            className={`transition-all bg-bluez min-w-[140px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
           >
             Connect Wallet
           </button> */}
@@ -54,7 +54,7 @@ export default function Nav() {
       {/* MOBILE */}
       <main className="flex xl:hidden w-full px-4 relative">
         <div
-          className={`flex items-center justify-between w-full py-[20px] px-[10px] border-b border-bluex/[24%] ${roboto.className}`}
+          className={`flex items-center justify-between w-full py-[20px] px-[10px] border-b border-bluez/[24%] ${roboto.className}`}
         >
           <Link href="/" className="hover:opacity-75">
             <Image src="/logo.svg" width={28.25} height={28.25} alt="logo" />
@@ -62,7 +62,7 @@ export default function Nav() {
           <div className="flex items-center justify-center flex-1"></div>
           <div className="flex flex-row items-center gap-3">
             {/* <button
-              className={`transition-all bg-bluex min-w-[100px] ml-[57.5px] h-[29px] flex justify-center items-center rounded-lg text-white text-[12px] font-medium hover:scale-[1.02] ${roboto.className}`}
+              className={`transition-all bg-bluez min-w-[100px] ml-[57.5px] h-[29px] flex justify-center items-center rounded-lg text-white text-[12px] font-medium hover:scale-[1.02] ${roboto.className}`}
             >
               Connect Wallet
             </button> */}
@@ -107,8 +107,8 @@ export default function Nav() {
                   <Link
                     key={index}
                     href={item.href}
-                    className={`hover:text-bluex hover:border-b border-bluex ${
-                      item.href === page && "text-bluex border-b"
+                    className={`hover:text-bluez hover:border-b border-bluez ${
+                      item.href === page && "text-bluez border-b"
                     }`}
                   >
                     {item.title}
