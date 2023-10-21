@@ -6,6 +6,11 @@ import { routes } from "../../consts";
 import { useEthersProvider, useEthersSigner } from "../utils/ethers";
 import { JsonRpcProvider, JsonRpcSigner } from "ethers";
 
+export const enum Theme {
+  light = "light",
+  dark = "dark",
+}
+
 export const StateContext = createContext({
   page: "/",
   setPage: (value: string) => {},
@@ -15,6 +20,9 @@ export const StateContext = createContext({
 
   signer: null,
   setSigner: (value: JsonRpcSigner | undefined) => {},
+
+  theme: Theme.light,
+  setTheme: (value: Theme) => {},
 });
 
 type Props = {
@@ -27,6 +35,7 @@ export const StateProvider = ({ children }: Props) => {
   const [page, setPage] = useState(routes[0].href);
   const [provider, setProvider] = useState<any>(undefined);
   const [signer, setSigner] = useState<any>(undefined);
+  const [theme, setTheme] = useState(Theme.light);
 
   const jsonProvider = useEthersProvider();
   const walletSigner = useEthersSigner();
@@ -62,6 +71,8 @@ export const StateProvider = ({ children }: Props) => {
         setProvider,
         signer,
         setSigner,
+        theme,
+        setTheme,
       }}
     >
       {children}

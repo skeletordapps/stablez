@@ -143,36 +143,36 @@ export default function Dashboard() {
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white">
           <h3
-            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez dark:text-aquaz ${roboto.className}`}
           >
             Dashboard
           </h3>
-          <span className="font-light text-[14px] text-[#3E3E3E]">
+          <span className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
             Current and Historical data of StableZ's TVL, and Rewards paid to
             date.
           </span>
           <div className="flex justify-center items-center gap-2 xl:gap-20 font-medium text-[13px] pt-[60px]">
-            <div className="flex flex-col text-bluez w-[300px]">
+            <div className="flex flex-col text-bluez dark:text-white/80 w-[300px]">
               <span className="font-medium text-[12px] lg:text-[28px]">
                 TOTAL STAKED
               </span>
-              <span className="font-black text-[16px] md:text-[32px]">
+              <span className="font-black text-[16px] md:text-[32px] dark:text-white">
                 12000.50k
               </span>
             </div>
-            <div className="flex flex-col text-bluez w-[300px]">
+            <div className="flex flex-col text-bluez dark:text-white/80 w-[300px]">
               <span className="font-medium text-[12px] lg:text-[28px]">
                 REWARDS PAID
               </span>
-              <span className="font-black text-[16px] md:text-[32px]">
+              <span className="font-black text-[16px] md:text-[32px] dark:text-white">
                 12000.50k
               </span>
             </div>
-            <div className="flex flex-col text-bluez w-[300px]">
+            <div className="flex flex-col text-bluez dark:text-white/80 w-[300px]">
               <span className="font-medium text-[12px] lg:text-[28px]">
                 OTHER STUFF
               </span>
-              <span className="font-black text-[16px] md:text-[32px]">
+              <span className="font-black text-[16px] md:text-[32px] dark:text-white">
                 12000.50k
               </span>
             </div>
@@ -180,7 +180,7 @@ export default function Dashboard() {
         </div>
       </section>
       <section>
-        <div className="flex flex-row justify-between items-center w-full px-4 pr-10 py-6  bg-bluez rounded-[8px] shadow-lg">
+        <div className="flex flex-row justify-between items-center w-full px-4 pr-10 py-6  bg-bluez dark:bg-bluez/40 rounded-[8px] shadow-lg">
           <div className="hidden md:flex w-full items-center gap-3">
             <Image src="/logo-white.svg" width={20} height={20} alt="logo" />
             <span className="font-bold text-white">Charts</span>
@@ -229,7 +229,7 @@ export default function Dashboard() {
             // height={400}
             data={data}
             options={options}
-            className="bg-white/50 w-full p-3 rounded-[8px] mt-3 shadow-xl"
+            className="bg-white/50 dark:bg-bluez/10 w-full p-3 rounded-[8px] mt-3 shadow-xl"
           />
         )}
 
@@ -237,7 +237,7 @@ export default function Dashboard() {
           <Bar
             data={barData}
             options={barOptions as any}
-            className="bg-white/50 w-full p-3 rounded-[8px] mt-3 shadow-xl"
+            className="bg-white/50 dark:bg-bluez/10 w-full p-3 rounded-[8px] mt-3 shadow-xl"
           />
         )}
       </section>

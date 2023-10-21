@@ -13,18 +13,18 @@ export default function LegalDisclaimer() {
       <div className="flex flex-col justify-center items-center gap-10 py-14">
         <div className="flex flex-col justify-center items-center">
           <h3
-            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez dark:text-aquaz ${roboto.className}`}
           >
             Legal Disclaimer
           </h3>
-          <span className="font-light text-[14px] text-[#3E3E3E]">
+          <span className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
             Users are advised to adhere to the attached legal disclaimer at
             their own peril.
           </span>
         </div>
 
         <div
-          className={`flex flex-col justify-center items-center gap-14 bg-bluez text-white p-14 shadow-xl font-medium max-w-[1100px] text-lg border border-[#00EAFF]/50 ${roboto.className}`}
+          className={`flex flex-col justify-center items-center gap-14 bg-bluez dark:bg-bluez/10 text-white p-14  shadow-xl font-medium max-w-[1100px] text-lg border border-[#00EAFF]/50 dark:border-transparent ${roboto.className}`}
         >
           <div>
             <p className="text-[#00EAFF] text-xl">

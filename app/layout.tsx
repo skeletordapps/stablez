@@ -1,6 +1,5 @@
 "use client";
 import "./globals.css";
-import Head from "next/head";
 import { Inter } from "next/font/google";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
@@ -16,20 +15,11 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { base } from "wagmi/chains";
-import { publicProvider } from "wagmi/providers/public";
 import { jsonRpcProvider } from "@wagmi/core/providers/jsonRpc";
-
-// import {} from "wagmi/providers";
 
 const merge = require("lodash.merge");
 
 const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata = {
-//   title: "StableZ",
-//   description:
-//     "The main liquidity booster for stable assets and lsdfi exclusively on Base.",
-// };
 
 const { chains, publicClient } = configureChains(
   [base],
@@ -92,7 +82,7 @@ export default function RootLayout({
             theme={stablezTheme}
             avatar={CustomAvatar}
           >
-            <div className="flex flex-col items-center bg-main w-full">
+            <div className="flex flex-col items-center bg-main dark:bg-main-dark w-full">
               <StateProvider>
                 <Nav />
                 {children}

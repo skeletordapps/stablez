@@ -109,18 +109,18 @@ export default function Earn() {
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white">
           <h3
-            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez dark:text-aquaz ${roboto.className}`}
           >
             Farms Statistics
           </h3>
-          <span className="font-light text-[14px] text-[#3E3E3E]">
+          <span className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
             There are currently 34 active farms, with 20 stable and 14 volatile
             farms.
           </span>
 
           <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-10 lg:mt-24">
             <div className="flex flex-col bg-gradient-to-br from-bluez/50 via-bluez/60 to-bluez w-full h-[400px] rounded-[8px] shadow-lg">
-              <div className="flex flex-col text-white p-8 border-b-2">
+              <div className="flex flex-col text-white dark:text-white/80 p-8 border-b-2 dark:border-black">
                 <span className="font-medium text-[28px]">YOUR STAKINGS</span>
                 <span className="font-black text-[42px]">12000.50k</span>
               </div>
@@ -140,15 +140,15 @@ export default function Earn() {
               </div>
             </div>
             <div className="flex flex-col bg-gradient-to-br from-bluez/10 via-bluez/30 to-bluez/30 w-full h-[400px] rounded-[8px] shadow-lg">
-              <div className="flex flex-col text-bluez p-8 border-b-2 border-white">
+              <div className="flex flex-col text-bluez dark:text-white/80 p-8 border-b-2 border-white dark:border-black/50">
                 <span className="font-medium text-[28px]">YOUR REWARDS</span>
                 <span className="font-black text-[42px]">12000.50k</span>
               </div>
-              <div className="flex flex-col text-bluez p-8 gap-3 mt-3">
+              <div className="flex flex-col text-bluez dark:text-white p-8 gap-3 mt-3">
                 {rightInfo.map((item, index) => (
                   <p key={index} className="flex items-center justify-between">
                     <span>{item.title}</span>
-                    <span className="flex flex-1 border-b border-bluez border-dotted mx-2" />
+                    <span className="flex flex-1 border-b border-bluez dark:border-white border-dotted mx-2" />
                     <span>
                       {item.value.toLocaleString("en-us", {
                         maximumFractionDigits: 2,
@@ -211,7 +211,7 @@ export default function Earn() {
 
             {/* DESKTOP FARMS LIST */}
             <div
-              className={`hidden xl:grid lg:grid-cols-4 text-right mt-5 text-[16px] text-bluez ${roboto.className}`}
+              className={`hidden xl:grid lg:grid-cols-4 text-right mt-5 text-[16px] text-bluez dark:text-white ${roboto.className}`}
             >
               <div className="py-6 text-left ml-10">Pair</div>
               <div className="py-6">Farm Details</div>
@@ -223,8 +223,8 @@ export default function Earn() {
                   <div
                     className={`${
                       index % 2 === 0
-                        ? "bg-[#D4E1FD] border-blue-100"
-                        : "bg-[#FAFDFF] border-bluez/10"
+                        ? "bg-[#D4E1FD] border-blue-100 dark:bg-bluez/40 dark:border-bluez/40"
+                        : "bg-[#FAFDFF] border-bluez/10 dark:bg-bluez/20 dark:border-bluez/30"
                     } border border-r-0 py-6 my-1 text-left flex items-center pl-10 rounded-l-[8px]`}
                   >
                     <div className="flex items-center">
@@ -240,8 +240,8 @@ export default function Earn() {
                   <div
                     className={`${
                       index % 2 === 0
-                        ? "bg-[#D4E1FD] border-blue-100"
-                        : "bg-[#FAFDFF] border-bluez/10"
+                        ? "bg-[#D4E1FD] border-blue-100 dark:bg-bluez/40 dark:border-bluez/40"
+                        : "bg-[#FAFDFF] border-bluez/10 dark:bg-bluez/20 dark:border-bluez/30"
                     } border-b border-t py-6 my-1`}
                   >
                     <div className="flex flex-col gap-1">
@@ -250,7 +250,7 @@ export default function Earn() {
                           className={`mr-1 text-[12px]  ${
                             hover === index
                               ? "text-white/80"
-                              : "text-neutral-500"
+                              : "text-neutral-500 dark:text-neutral-300"
                           }`}
                         >
                           APR:
@@ -262,7 +262,7 @@ export default function Earn() {
                           className={`mr-1 text-[12px]  ${
                             hover === index
                               ? "text-white/80"
-                              : "text-neutral-500"
+                              : "text-neutral-500 dark:text-neutral-300"
                           }`}
                         >
                           TVL:
@@ -274,8 +274,8 @@ export default function Earn() {
                   <div
                     className={`${
                       index % 2 === 0
-                        ? "bg-[#D4E1FD] border-blue-100"
-                        : "bg-[#FAFDFF] border-bluez/10"
+                        ? "bg-[#D4E1FD] border-blue-100 dark:bg-bluez/40 dark:border-bluez/40"
+                        : "bg-[#FAFDFF] border-bluez/10 dark:bg-bluez/20 dark:border-bluez/30"
                     } border-b border-t py-6 my-1`}
                   >
                     <div className="flex flex-col gap-1">
@@ -284,7 +284,7 @@ export default function Earn() {
                           className={`mr-1 text-[12px]  ${
                             hover === index
                               ? "text-white/80"
-                              : "text-neutral-500"
+                              : "text-neutral-500 dark:text-neutral-300"
                           }`}
                         >
                           Staked:
@@ -296,7 +296,7 @@ export default function Earn() {
                           className={`mr-1 text-[12px]  ${
                             hover === index
                               ? "text-white/80"
-                              : "text-neutral-500"
+                              : "text-neutral-500 dark:text-neutral-300"
                           }`}
                         >
                           Est. Rewards:
@@ -308,7 +308,7 @@ export default function Earn() {
                           className={`mr-1 text-[12px]  ${
                             hover === index
                               ? "text-white/80"
-                              : "text-neutral-500"
+                              : "text-neutral-500 dark:text-neutral-300"
                           }`}
                         >
                           Claimed:
@@ -321,21 +321,21 @@ export default function Earn() {
                   <div
                     className={`${
                       index % 2 === 0
-                        ? "bg-[#D4E1FD] border-blue-100"
-                        : "bg-[#FAFDFF] border-bluez/10"
+                        ? "bg-[#D4E1FD] border-blue-100 dark:bg-bluez/40 dark:border-bluez/40"
+                        : "bg-[#FAFDFF] border-bluez/10 dark:bg-bluez/20 dark:border-bluez/30"
                     } border border-l-0 flex flex-col justify-center items-end py-6 my-1 gap-2 pr-10 rounded-r-[8px]`}
                   >
                     {farm.status === "OPEN" ? (
                       <Link
                         href={`/earn/${index + 1}`}
-                        className={`transition-all bg-bluez xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluez border hover:scale-[1.02] gap-3 ${roboto.className}`}
+                        className={`transition-all bg-bluez dark:bg-white xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white dark:text-bluez text-[16px] font-medium hover:bg-white hover:text-bluez border hover:scale-[1.02] gap-3 ${roboto.className}`}
                       >
                         {piggy}
                         <span>Earn</span>
                       </Link>
                     ) : (
                       <span
-                        className={`transition-all bg-red-500/20 xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium border gap-3 ${roboto.className}`}
+                        className={`transition-all bg-red-500/20 xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white dark:text-red-400 text-[16px] font-medium border dark:border-red-400 gap-3 ${roboto.className}`}
                       >
                         {finished}
                         {farm.status}
@@ -367,7 +367,9 @@ export default function Earn() {
                     <p>
                       <span
                         className={`mr-1  ${
-                          hover === index ? "text-white/80" : "text-neutral-500"
+                          hover === index
+                            ? "text-white/80"
+                            : "text-neutral-500 dark:text-neutral-300"
                         }`}
                       >
                         APR:
@@ -377,7 +379,9 @@ export default function Earn() {
                     <p>
                       <span
                         className={`mr-1  ${
-                          hover === index ? "text-white/80" : "text-neutral-500"
+                          hover === index
+                            ? "text-white/80"
+                            : "text-neutral-500 dark:text-neutral-300"
                         }`}
                       >
                         TVL:
@@ -388,7 +392,9 @@ export default function Earn() {
                     <p>
                       <span
                         className={`mr-1  ${
-                          hover === index ? "text-white/80" : "text-neutral-500"
+                          hover === index
+                            ? "text-white/80"
+                            : "text-neutral-500 dark:text-neutral-300"
                         }`}
                       >
                         Staked:
@@ -398,7 +404,9 @@ export default function Earn() {
                     <p>
                       <span
                         className={`mr-1  ${
-                          hover === index ? "text-white/80" : "text-neutral-500"
+                          hover === index
+                            ? "text-white/80"
+                            : "text-neutral-500 dark:text-neutral-300"
                         }`}
                       >
                         Est. Rewards:
@@ -408,7 +416,9 @@ export default function Earn() {
                     <p>
                       <span
                         className={`mr-1  ${
-                          hover === index ? "text-white/80" : "text-neutral-500"
+                          hover === index
+                            ? "text-white/80"
+                            : "text-neutral-500 dark:text-neutral-300"
                         }`}
                       >
                         Claimed:
@@ -442,11 +452,11 @@ export default function Earn() {
 
           {/* PAGINATOR */}
           <div className="flex flex-col md:flex-row justify-between items-center px-2 my-10 gap-4 md:gap-0">
-            <span className="text-black font-light text-[14px]">
+            <span className="text-black dark:text-aquaz font-light text-[14px]">
               Showing 25 out of 58 pools...
             </span>
             <div className="flex flex-row items-center justify-between  text-[14px] font-medium border border-[#2F3B89]/30 rounded-[8px]">
-              <button className="flex flex-row items-center justify-between gap-2 p-2 px-3 rounded-l-[8px] bg-white text-[#2F3B89] hover:bg-bluez hover:text-white">
+              <button className="flex flex-row items-center justify-between gap-2 p-2 px-3 rounded-l-[8px] bg-white dark text-[#2F3B89] hover:bg-bluez hover:text-white">
                 <svg
                   fill="none"
                   stroke="currentColor"
