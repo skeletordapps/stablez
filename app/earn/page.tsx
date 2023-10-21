@@ -352,6 +352,7 @@ export default function Earn() {
             >
               {farms.map((farm, index) => (
                 <div
+                  key={index}
                   className={`flex flex-col justify-center items-start text-start w-full md:max-w-[250px] px-4 even:bg-[#D4E1FD] even:border-blue-100 odd:bg-[#FAFDFF] odd:border-bluez/10" border py-6 rounded-[8px]`}
                 >
                   <div className="flex items-center mb-4">
