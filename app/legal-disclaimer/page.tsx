@@ -24,12 +24,12 @@ export default function LegalDisclaimer() {
         </div>
 
         <div
-          className={`flex flex-col justify-center items-center gap-10 bg-bluez/20 text-black/80 p-10 rounded-[8px] shadow-xl font-medium max-w-[900px] border border-bluez/30 ${roboto.className}`}
+          className={`flex flex-col justify-center items-center gap-14 bg-bluez text-white p-14 shadow-xl font-medium max-w-[1100px] text-lg border border-[#00EAFF]/50 ${roboto.className}`}
         >
-          <p>
-            <span className="text-black">
-              1 - Financial and Investment Advice:
-            </span>{" "}
+          <div>
+            <p className="text-[#00EAFF] text-xl">
+              1 - Financial and Investment Advice
+            </p>
             The information provided on this website does not constitute any
             financial advice, investment advice, trading, or any other form of
             advice. The contents of this website serve as a public good and
@@ -38,35 +38,37 @@ export default function LegalDisclaimer() {
             full responsibility for any financial losses incurred. StableZ is
             not a proprietary token and does not entitle its holder any
             ownership, guarantee of profits, or returns.
-          </p>
-          <p>
-            <span className="text-black">2 - Tax Obligations:</span> Users are
-            solely responsible for complying with relevant tax authorities and
-            meeting any tax obligations applicable to their respective
+          </div>
+          <div>
+            <p className="text-[#00EAFF] text-xl">2 - Tax Obligations</p> Users
+            are solely responsible for complying with relevant tax authorities
+            and meeting any tax obligations applicable to their respective
             jurisdictions. The contributors to this website shall not be held
             liable for determining taxes related to users' transactions.
-          </p>
-          <p>
-            <span className="text-black">3 - No Warranties or</span> Promised
-            Returns: This website makes no warranties, guarantees, or promises
-            of any kind, including but not limited to investment returns or
+          </div>
+          <div>
+            <p className="text-[#00EAFF] text-xl">
+              3 - No Warranties or Promised Returns
+            </p>
+            This website makes no warranties, guarantees, or promises of any
+            kind, including but not limited to investment returns or
             profitability. The website's functionality is subject to change and
             may be amended at the contributors' discretion without prior notice.
-          </p>
-          <p>
-            <span className="text-black">4 - Bugs and Security</span>: The
+          </div>
+          <div>
+            <p className="text-[#00EAFF] text-xl">4 - Bugs and Security</p> The
             website is not guaranteed to be immune from bugs, technical issues,
             or security vulnerabilities. Users assume all risks associated with
             using the website, and the contributors shall not be liable for any
             losses resulting from such issues.
-          </p>
-          <p className="text-black pt-5 border-t border-bluez/30">
+          </div>
+          <div className="text-white pt-10 border-t border-white text-xl">
             By accessing and using this website, you agree to release the
             contributors from any and all liabilities, claims, damages, losses,
             or expenses arising from or related to your use of the website. The
             user alone shall be liable for any losses and the contributors will
             be relieved from any such liabilities.
-          </p>
+          </div>
         </div>
       </div>
     </main>
