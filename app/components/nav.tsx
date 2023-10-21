@@ -14,7 +14,7 @@ const roboto = Roboto_Condensed({
   subsets: ["latin"],
 });
 export default function Nav() {
-  const { page, theme, setPage, setTheme } = useContext(StateContext);
+  const { page, theme, signer, setTheme } = useContext(StateContext);
   const [open, setOpen] = useState(false);
   const [options, _] = useState<{ image: React.ReactElement; theme: Theme }[]>([
     { image: light, theme: Theme.light },
@@ -91,7 +91,7 @@ export default function Nav() {
                 ))}
             </div>
           </div>
-          <div className="flex flex-row items-center">
+          <div className={`flex flex-row items-center ${signer && "gap-5"} `}>
             <Connect />
             <button
               onClick={() =>
