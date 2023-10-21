@@ -1,22 +1,24 @@
-import { discord, telegram, twitterX } from "./public/svg";
-
 export type route = { title: string; href: string };
 export const routes: route[] = [
-  {
-    title: "Home",
-    href: "/",
-  },
+  // {
+  //   title: "Home",
+  //   href: "/",
+  // },
   {
     title: "Dashboard",
-    href: "/dashboard",
+    href: "/",
   },
   {
     title: "Earn",
     href: "/earn",
   },
   {
+    title: "Staking",
+    href: "/staking",
+  },
+  {
     title: "Docs",
-    href: "#",
+    href: "https://docs.stablez.io",
   },
   {
     title: "Legal Disclaimer",
@@ -41,6 +43,28 @@ export const socials: social[] = [
     title: "Discord",
     href: "#",
     src: "/socials/discord.svg",
+  },
+];
+
+export const assets = {
+  AERO: "0x940181a94A35A4569E4529A3CDfB74e38FD98631",
+  DOLAUSDbC: "0x0B25c51637c43decd6CC1C1e3da4518D54ddb528",
+  cbETHWETH: "0x44Ecc644449fC3a9858d2007CaA8CFAa4C561f91",
+  USDT: "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
+};
+
+export const farms = [
+  {
+    title: "sAMM-DOLA/USDbC",
+    contract: "",
+    asset: assets.DOLAUSDbC,
+    stable: true,
+  },
+  {
+    title: "vAMM-cbETH/WETH",
+    contract: "",
+    asset: assets.cbETHWETH,
+    stable: false,
   },
 ];
 

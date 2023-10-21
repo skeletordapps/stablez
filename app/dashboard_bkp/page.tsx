@@ -1,9 +1,7 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { Roboto_Condensed } from "next/font/google";
 import { useState } from "react";
-import { usdc, fusdt, piggy } from "@/public/svg";
 
 import {
   Chart as ChartJS,
@@ -40,7 +38,6 @@ const roboto = Roboto_Condensed({
 export default function Dashboard() {
   const [filter, setFilter] = useState(0);
   const [period, setPeriod] = useState(1);
-  const [page, setPage] = useState(1);
 
   const options = {
     responsive: true,
@@ -88,34 +85,16 @@ export default function Dashboard() {
 
   const barOptions = {
     responsive: true,
-    // maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "bottom",
         align: "start",
         labels: {
           boxWidth: 17,
-          // boxHeight: 0,
           usePointStyle: true,
           pointStyle: "circle",
         },
-        // title: {
-        //   text: "Sales Report",
-        //   display: true,
-        //   color: "#000",
-        //   font: {
-        //     size: 18,
-        //   },
-        // },
       },
-    },
-    scales: {
-      // xAxis: {
-      //   display: true,
-      // },
-      // yAxis: {
-      //   max: 1,
-      // },
     },
     elements: {
       bar: {
@@ -154,7 +133,7 @@ export default function Dashboard() {
     ],
   };
 
-  const filters = ["Chart 1", "Chart 2"];
+  const filters = ["Line Chart", "Column Chart"];
   const periods = ["Day", "Week", "15 days", "30 days"];
 
   return (
@@ -169,7 +148,8 @@ export default function Dashboard() {
             Dashboard
           </h3>
           <span className="font-light text-[14px] text-[#3E3E3E]">
-            A super fancy text describing this page
+            Current and Historical data of StableZ's TVL, and Rewards paid to
+            date.
           </span>
           <div className="flex justify-center items-center gap-2 xl:gap-20 font-medium text-[13px] pt-[60px]">
             <div className="flex flex-col text-bluez w-[300px]">

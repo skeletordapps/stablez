@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Roboto_Condensed } from "next/font/google";
 import { useState } from "react";
-import { usdc, fusdt, piggy } from "@/public/svg";
+import { usdc, fusdt, piggy, finished } from "@/public/svg";
 
 const roboto = Roboto_Condensed({
   weight: ["300", "400", "700"],
@@ -38,7 +38,7 @@ const farms = [
     pair: "USDC/USDC",
     apr: "100%",
     tvl: "20.233k",
-    staked: "1100.20k",
+    staked: "1111100.20k",
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
     status: "OPEN",
@@ -57,7 +57,7 @@ const farms = [
   {
     pair: "USDC/USDC",
     apr: "100%",
-    tvl: "20.233k",
+    tvl: "200000.233k",
     staked: "1100.20k",
     estimatedRewards: "1.450k",
     claimedRewards: "440.87",
@@ -118,7 +118,7 @@ export default function Earn() {
             farms.
           </span>
 
-          <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-10 md:mt-24">
+          <div className="flex flex-col xl:flex-row items-center justify-between gap-[38px] mt-10 lg:mt-24">
             <div className="flex flex-col bg-gradient-to-br from-bluez/50 via-bluez/60 to-bluez w-full h-[400px] rounded-[8px] shadow-lg">
               <div className="flex flex-col text-white p-8 border-b-2">
                 <span className="font-medium text-[28px]">YOUR STAKINGS</span>
@@ -168,7 +168,7 @@ export default function Earn() {
         <div className="flex flex-col">
           <div className="">
             {/* FILTERS */}
-            <div className="flex flex-col lg:flex-row justify-between items-center w-full px-4 pr-10 py-6 bg-bluez rounded-[8px] shadow-lg gap-10 lg:gap-0">
+            <div className="flex flex-col lg:flex-row justify-between items-center w-full px-4 pr-10 py-6 bg-bluez rounded-[8px] shadow-lg">
               <div className="relative">
                 <input
                   type="text"
@@ -184,7 +184,13 @@ export default function Earn() {
                 />
               </div>
 
-              <div className="flex flex-row items-center justify-between text-[12px] md:text-[16px] font-medium gap-3 lg:gap-10">
+              <div
+                className="
+                  flex flex-row items-center justify-between flex-wrap text-[12px] border-t border-white/30 pt-[20px] mt-[20px] font-medium gap-3
+                  md:text-[16px] lg:border-none lg:pt-0 lg:mt-0
+                  lg:gap-10
+                "
+              >
                 {filters.map((item, index) => (
                   <button
                     key={index}
@@ -202,46 +208,164 @@ export default function Earn() {
                 ))}
               </div>
             </div>
+
+            {/* DESKTOP FARMS LIST */}
             <div
-              className={`hidden xl:flex flex-row items-center w-full py-6 mt-5 px-8 text-[16px] text-bluez text-right ${roboto.className}`}
+              className={`hidden xl:grid lg:grid-cols-4 text-right mt-5 text-[16px] text-bluez ${roboto.className}`}
             >
-              <span className="w-[304px] 2xl:w-[382px] text-left">Pair</span>
-              <button className="underline hover:opacity-80 w-[116px] text-right">
-                Farm Details
-              </button>
-              <button className="underline hover:opacity-80 w-[278px] 2xl:w-[338px] text-right">
-                Earning
-              </button>
-              <button className="underline hover:opacity-80 flex-1 text-right">
-                Status
-              </button>
-              <div className="w-[158px]" />
+              <div className="py-6 text-left ml-10">Pair</div>
+              <div className="py-6">Farm Details</div>
+              <div className="py-6">Earning</div>
+              <div className="py-6"></div>
+
+              {farms.map((farm, index) => (
+                <>
+                  <div
+                    className={`${
+                      index % 2 === 0
+                        ? "bg-[#D4E1FD] border-blue-100"
+                        : "bg-[#FAFDFF] border-bluez/10"
+                    } border border-r-0 py-6 my-1 text-left flex items-center pl-10 rounded-l-[8px]`}
+                  >
+                    <div className="flex items-center">
+                      <div className="w-[28px] z-10 drop-shadow-md">{usdc}</div>
+                      <div className="w-[28px] ml-[-10px] drop-shadow-md">
+                        {fusdt}
+                      </div>
+                      <span className="w-[138px] text-left ml-4">
+                        {farm.pair}
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className={`${
+                      index % 2 === 0
+                        ? "bg-[#D4E1FD] border-blue-100"
+                        : "bg-[#FAFDFF] border-bluez/10"
+                    } border-b border-t py-6 my-1`}
+                  >
+                    <div className="flex flex-col gap-1">
+                      <p>
+                        <span
+                          className={`mr-1 text-[12px]  ${
+                            hover === index
+                              ? "text-white/80"
+                              : "text-neutral-500"
+                          }`}
+                        >
+                          APR:
+                        </span>
+                        {farm.apr}
+                      </p>
+                      <p>
+                        <span
+                          className={`mr-1 text-[12px]  ${
+                            hover === index
+                              ? "text-white/80"
+                              : "text-neutral-500"
+                          }`}
+                        >
+                          TVL:
+                        </span>
+                        {farm.tvl}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className={`${
+                      index % 2 === 0
+                        ? "bg-[#D4E1FD] border-blue-100"
+                        : "bg-[#FAFDFF] border-bluez/10"
+                    } border-b border-t py-6 my-1`}
+                  >
+                    <div className="flex flex-col gap-1">
+                      <p>
+                        <span
+                          className={`mr-1 text-[12px]  ${
+                            hover === index
+                              ? "text-white/80"
+                              : "text-neutral-500"
+                          }`}
+                        >
+                          Staked:
+                        </span>
+                        {farm.staked}
+                      </p>
+                      <p>
+                        <span
+                          className={`mr-1 text-[12px]  ${
+                            hover === index
+                              ? "text-white/80"
+                              : "text-neutral-500"
+                          }`}
+                        >
+                          Est. Rewards:
+                        </span>
+                        {farm.estimatedRewards}
+                      </p>
+                      <p>
+                        <span
+                          className={`mr-1 text-[12px]  ${
+                            hover === index
+                              ? "text-white/80"
+                              : "text-neutral-500"
+                          }`}
+                        >
+                          Claimed:
+                        </span>
+                        {farm.claimedRewards}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`${
+                      index % 2 === 0
+                        ? "bg-[#D4E1FD] border-blue-100"
+                        : "bg-[#FAFDFF] border-bluez/10"
+                    } border border-l-0 flex flex-col justify-center items-end py-6 my-1 gap-2 pr-10 rounded-r-[8px]`}
+                  >
+                    {farm.status === "OPEN" ? (
+                      <Link
+                        href={`/earn/${index + 1}`}
+                        className={`transition-all bg-bluez xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluez border hover:scale-[1.02] gap-3 ${roboto.className}`}
+                      >
+                        {piggy}
+                        <span>Earn</span>
+                      </Link>
+                    ) : (
+                      <span
+                        className={`transition-all bg-red-500/20 xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium border gap-3 ${roboto.className}`}
+                      >
+                        {finished}
+                        {farm.status}
+                      </span>
+                    )}
+                  </div>
+                </>
+              ))}
             </div>
-          </div>
-          {/* LIST ITEMS */}
-          <div className="flex flex-col w-full gap-[2px] mt-5 xl:mt-0">
-            {farms.map((farm, index) => (
-              <div
-                key={index}
-                className={`flex flex-col w-full even:bg-[#D4E1FD] odd:bg-[#FAFDFF] even:text-black odd:text-black hover:text-white hover:bg-bluez border even:border-blue-100 odd:border-bluez/10 rounded-[8px] py-4 text-[14px] text-start xl:text-right`}
-                onMouseEnter={() => setHover(index)}
-                onMouseLeave={() => setHover(-1)}
-              >
-                <div className="flex flex-col xl:flex-row w-full h-full items-center px-8 gap-1 xl:gap-0">
-                  <div className="flex items-center w-full xl:w-auto mb-4 xl:mb-0">
+
+            {/* MOBILE FARMS LIST */}
+            <div
+              className={`flex xl:hidden flex-col md:flex-row justify-center flex-wrap mt-5 text-[16px] md:text-[12px] text-bluez gap-3 ${roboto.className}`}
+            >
+              {farms.map((farm, index) => (
+                <div
+                  className={`flex flex-col justify-center items-start text-start w-full md:max-w-[250px] px-4 even:bg-[#D4E1FD] even:border-blue-100 odd:bg-[#FAFDFF] odd:border-bluez/10" border py-6 rounded-[8px]`}
+                >
+                  <div className="flex items-center mb-4">
                     <div className="w-[28px] z-10 drop-shadow-md">{usdc}</div>
                     <div className="w-[28px] ml-[-10px] drop-shadow-md">
                       {fusdt}
                     </div>
-                    <span className="w-[138px] text-left ml-4">
-                      {farm.pair}
-                    </span>
+                    <span className="ml-4">{farm.pair}</span>
                   </div>
 
-                  <div className="flex flex-col gap-1 w-full xl:min-w-[220px] 2xl:min-w-[280px]">
+                  <div className="flex flex-col gap-1">
                     <p>
                       <span
-                        className={`mr-1 text-[12px]  ${
+                        className={`mr-1  ${
                           hover === index ? "text-white/80" : "text-neutral-500"
                         }`}
                       >
@@ -251,7 +375,7 @@ export default function Earn() {
                     </p>
                     <p>
                       <span
-                        className={`mr-1 text-[12px]  ${
+                        className={`mr-1  ${
                           hover === index ? "text-white/80" : "text-neutral-500"
                         }`}
                       >
@@ -259,11 +383,10 @@ export default function Earn() {
                       </span>
                       {farm.tvl}
                     </p>
-                  </div>
-                  <div className="flex flex-col gap-1 w-full xl:min-w-[280px] 2xl:min-w-[340px]">
+
                     <p>
                       <span
-                        className={`mr-1 text-[12px]  ${
+                        className={`mr-1  ${
                           hover === index ? "text-white/80" : "text-neutral-500"
                         }`}
                       >
@@ -273,7 +396,7 @@ export default function Earn() {
                     </p>
                     <p>
                       <span
-                        className={`mr-1 text-[12px]  ${
+                        className={`mr-1  ${
                           hover === index ? "text-white/80" : "text-neutral-500"
                         }`}
                       >
@@ -283,7 +406,7 @@ export default function Earn() {
                     </p>
                     <p>
                       <span
-                        className={`mr-1 text-[12px]  ${
+                        className={`mr-1  ${
                           hover === index ? "text-white/80" : "text-neutral-500"
                         }`}
                       >
@@ -293,34 +416,27 @@ export default function Earn() {
                     </p>
                   </div>
 
-                  <p className="flex flex-col gap-1 w-full">
-                    <span
-                      className={`text-[14px] 
-                      ${
-                        farm.status === "OPEN"
-                          ? hover === index
-                            ? "text-green-400"
-                            : "text-green-700"
-                          : hover === index
-                          ? "text-red-200"
-                          : "text-red-500"
-                      } 
-                      ${roboto.className}`}
-                    >
-                      {farm.status}
-                    </span>
-                  </p>
-
-                  <Link
-                    href={`/earn/${index + 1}`}
-                    className={`transition-all bg-bluez w-full xl:min-w-[100px] xl:max-w-[100px] xl:ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluez border hover:scale-[1.02] gap-3 mt-6 xl:mt-0 ${roboto.className}`}
-                  >
-                    {piggy}
-                    <span>Earn</span>
-                  </Link>
+                  <div className="flex flex-col justify-center items-end mt-4 gap-2 w-full">
+                    {farm.status === "OPEN" ? (
+                      <Link
+                        href={`/earn/${index + 1}`}
+                        className={`transition-all bg-bluez w-full xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluez border hover:scale-[1.02] gap-3 ${roboto.className}`}
+                      >
+                        {piggy}
+                        <span>Earn</span>
+                      </Link>
+                    ) : (
+                      <span
+                        className={`transition-all bg-red-500/20 w-full xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium border gap-3 ${roboto.className}`}
+                      >
+                        {finished}
+                        Ended
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* PAGINATOR */}

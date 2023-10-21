@@ -32,6 +32,7 @@ export default function Nav() {
                 .filter((item) => item.title !== "Legal Disclaimer")
                 .map((item, index) => (
                   <Link
+                    target={item.title === "Docs" ? "blank" : ""}
                     key={index}
                     href={item.href}
                     className={`hover:text-bluez hover:border-b border-bluez ${
@@ -61,11 +62,6 @@ export default function Nav() {
           </Link>
           <div className="flex items-center justify-center flex-1"></div>
           <div className="flex flex-row items-center gap-3">
-            {/* <button
-              className={`transition-all bg-bluez min-w-[100px] ml-[57.5px] h-[29px] flex justify-center items-center rounded-lg text-white text-[12px] font-medium hover:scale-[1.02] ${roboto.className}`}
-            >
-              Connect Wallet
-            </button> */}
             <Connect />
             <button
               className="w-[29px] h-[29px]"
@@ -120,7 +116,4 @@ export default function Nav() {
       </main>
     </>
   );
-}
-
-{
 }

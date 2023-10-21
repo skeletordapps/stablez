@@ -3,15 +3,18 @@ import { usePathname, useParams } from "next/navigation";
 import { useState, createContext, useEffect, ReactNode } from "react";
 
 import { routes } from "../../consts";
-import { useEthersSigner } from "../utils/ethers";
-import { JsonRpcSigner } from "ethers";
+import { useEthersProvider, useEthersSigner } from "../utils/ethers";
+import { JsonRpcProvider, JsonRpcSigner } from "ethers";
 
 export const StateContext = createContext({
   page: "/",
   setPage: (value: string) => {},
 
+  provider: null,
+  setProvider: (value: JsonRpcProvider | undefined) => {},
+
   signer: null,
-  setSigner: (value: JsonRpcSigner | null) => {},
+  setSigner: (value: JsonRpcSigner | undefined) => {},
 });
 
 type Props = {
@@ -22,9 +25,17 @@ export const StateProvider = ({ children }: Props) => {
   const pathname = usePathname();
   const params = useParams();
   const [page, setPage] = useState(routes[0].href);
-  const [signer, setSigner] = useState<any>(null);
+  const [provider, setProvider] = useState<any>(undefined);
+  const [signer, setSigner] = useState<any>(undefined);
 
+  const jsonProvider = useEthersProvider();
   const walletSigner = useEthersSigner();
+
+  useEffect(() => {
+    if (jsonProvider) {
+      setProvider(jsonProvider as JsonRpcProvider);
+    }
+  }, [jsonProvider]);
 
   useEffect(() => {
     if (walletSigner) {
@@ -47,6 +58,8 @@ export const StateProvider = ({ children }: Props) => {
       value={{
         page,
         setPage,
+        provider,
+        setProvider,
         signer,
         setSigner,
       }}

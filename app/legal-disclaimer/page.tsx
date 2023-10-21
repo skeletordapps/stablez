@@ -18,7 +18,8 @@ export default function LegalDisclaimer() {
             Legal Disclaimer
           </h3>
           <span className="font-light text-[14px] text-[#3E3E3E]">
-            Read it carefully
+            Users are advised to adhere to the attached legal disclaimer at
+            their own peril.
           </span>
         </div>
 

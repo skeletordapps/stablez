@@ -17,6 +17,9 @@ import {
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { base } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
+import { jsonRpcProvider } from "@wagmi/core/providers/jsonRpc";
+
+// import {} from "wagmi/providers";
 
 const merge = require("lodash.merge");
 
@@ -28,7 +31,17 @@ const inter = Inter({ subsets: ["latin"] });
 //     "The main liquidity booster for stable assets and lsdfi exclusively on Base.",
 // };
 
-const { chains, publicClient } = configureChains([base], [publicProvider()]);
+const { chains, publicClient } = configureChains(
+  [base],
+  [
+    jsonRpcProvider({
+      rpc: () => ({
+        http: process.env.NEXT_PUBLIC_RPC_HTTPS as string,
+        webSocket: process.env.NEXT_PUBLIC_RPC_WSS as string,
+      }),
+    }),
+  ]
+);
 
 const { connectors } = getDefaultWallets({
   appName: "StableZ",

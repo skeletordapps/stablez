@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
-import { fusdt, usdc } from "@/public/svg";
+import { fusdt, stablez, usdc } from "@/public/svg";
 import { Roboto_Condensed } from "next/font/google";
 import { useState } from "react";
 
@@ -10,7 +9,7 @@ const roboto = Roboto_Condensed({
   subsets: ["latin"],
 });
 
-const tabs = ["Stake", "Unstake"];
+const tabs = ["Stake", "Unstake", "Rewards"];
 
 export default function Farm({ params }: { params: { id: string } }) {
   // return <div>Farm: {params.id}</div>;
@@ -29,7 +28,7 @@ export default function Farm({ params }: { params: { id: string } }) {
 
   return (
     <main className="flex flex-col w-full xl:max-w-[500px] text-center mb-24">
-      <section className="flex items-center justify-between w-full mt-10 md:mt-[87px] mb-[38px]">
+      <section className="flex items-center justify-between w-full mt-10 md:mt-[87px] mb-[48px]">
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white text-center">
           <h3
@@ -42,23 +41,7 @@ export default function Farm({ params }: { params: { id: string } }) {
           </span>
         </div>
       </section>
-      <div className="flex flex-row items-center justify-center w-full px-4 py-4 text-[16px] font-medium gap-10 bg-slate-700 md:rounded-[8px] shadow-lg xl:mt-10 mb-2">
-        {tabs.map((item, index) => (
-          <button
-            key={index}
-            onClick={() => setTab(index)}
-            className={`flex flex-row w-max items-center justify-center h-6 transition-all
-                  ${
-                    index === tab
-                      ? " text-white border-b  hover:opacity-90"
-                      : " text-white/80  hover:text-white"
-                  }
-                  `}
-          >
-            {item}
-          </button>
-        ))}
-      </div>
+
       <div className="flex flex-col bg-white/70 border border-bluez/30 w-full md:rounded-[8px] shadow-lg mb-10">
         <div className="flex flex-col w-full">
           <div
@@ -92,7 +75,83 @@ export default function Farm({ params }: { params: { id: string } }) {
             </p>
           </div>
         </div>
-        <div className="flex flex-col py-8 px-4 md:px-8 mt-4 gap-4">
+        <div className="flex flex-col py-8 px-4 md:px-8 mt-10 gap-4">
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-row justify-between items-center gap-1">
+              {tabs.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setTab(index)}
+                  className={`transition-all  w-16 h-[29px] flex justify-center items-center rounded-lg text-white text-[12px] font-medium hover:scale-[1.02] ${
+                    roboto.className
+                  } ${tab === index ? "bg-bluez" : "bg-bluez/20"}`}
+                >
+                  {tabs[index]}
+                </button>
+              ))}
+            </div>
+            <p
+              className={`text-end font-light text-[14px] mb-[-26px] pr-1 text-slate-500 ${
+                roboto.className
+              } ${tab === 2 ? "hidden" : "block"}`}
+            >
+              {tab === 0 ? "Available:" : "Staked:"}{" "}
+              <button
+                className="text-slate-700 hover:text-bluez"
+                onClick={() => onInputChange(Number(1000).toString())}
+              >
+                {Number(1000).toLocaleString("en-us", {
+                  maximumFractionDigits: 2,
+                })}
+              </button>
+            </p>
+          </div>
+
+          {tab !== 2 ? (
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Enter the amount"
+                className="w-full bg-transparent border border-slate-600 placeholder-slate-600 p-6 text-black rounded-[8px] text-[14px]"
+                onChange={(e) => onInputChange(e.target.value)}
+                value={inputValue}
+              />
+              <div className="flex items-center absolute top-[25px] right-4">
+                <div className="w-[22px]">{usdc}</div>
+                <div className="w-[22px] ml-[-10px] drop-shadow-md">
+                  {fusdt}
+                </div>
+                <span className="ml-2 text-[14px]">vAMM-WETH/USDC</span>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] text-left pl-2 py-[9px] pt-[12px]">
+              <p>
+                Weth Accumulated:{" "}
+                <span className="text-green-700">
+                  {Number(0.02333).toLocaleString("en-us", {
+                    maximumFractionDigits: 4,
+                  })}
+                </span>
+              </p>
+              <p>
+                Anytoken Accumulated:{" "}
+                <span className="text-green-700">
+                  {Number(0.02333).toLocaleString("en-us", {
+                    maximumFractionDigits: 4,
+                  })}
+                </span>
+              </p>
+            </div>
+          )}
+
+          <button
+            className={`transition-all bg-bluez w-full h-[49px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
+          >
+            {tab === 2 ? "Claim Rewards" : tabs[tab] + " vAMM-WETH/USDC"}
+          </button>
+        </div>
+        {/* <div className="flex flex-col py-8 px-4 md:px-8 mt-4 gap-4">
           <p
             className={`text-end font-light text-[14px] mb-[-12px] pr-1 text-slate-500 ${roboto.className}`}
           >
@@ -126,7 +185,7 @@ export default function Farm({ params }: { params: { id: string } }) {
           >
             {tabs[tab]} vAMM-WETH/USDC
           </button>
-        </div>
+        </div> */}
       </div>
       <Link
         href="/earn"

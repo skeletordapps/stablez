@@ -1,12 +1,17 @@
-import { JsonRpcSigner, Contract, formatEther } from "ethers";
+import { JsonRpcProvider, JsonRpcSigner, Contract, formatEther } from "ethers";
 import { tokenAbi } from "@/consts";
 
 export async function balanceOf(
   tokenAddress: string,
   userAddress: string,
-  signer: JsonRpcSigner
+  provider?: JsonRpcProvider,
+  signer?: JsonRpcSigner
 ) {
-  const contract = new Contract(tokenAddress, tokenAbi, signer);
+  const contract = new Contract(
+    tokenAddress,
+    tokenAbi,
+    provider ? provider : signer
+  );
   // Get the balance of the user
   const balance = await contract.balanceOf(userAddress);
   console.log(
