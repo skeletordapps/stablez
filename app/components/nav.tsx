@@ -8,7 +8,6 @@ import { StateContext } from "../context/StateContext";
 import { Transition } from "@headlessui/react";
 import { Connect } from "./connect";
 
-const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto_Condensed({
   weight: ["300", "400", "700"],
   subsets: ["latin"],
@@ -44,11 +43,6 @@ export default function Nav() {
                 ))}
             </div>
           </div>
-          {/* <button
-            className={`transition-all bg-bluez min-w-[140px] ml-[57.5px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
-          >
-            Connect Wallet
-          </button> */}
           <Connect />
         </div>
       </main>
