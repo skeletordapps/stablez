@@ -61,20 +61,26 @@ const stablezThemeDark = merge(midnightTheme(), {
   },
 } as Theme);
 
-const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {
-  return ensImage ? (
-    <img src={ensImage} width={size} height={size} />
-  ) : (
-    <img src="/avatar.svg" width={size} height={size} alt="avatar" />
-  );
-};
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const [themeSelected, setThemeSelected] = useState(stablezThemeLight);
+
+  const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {
+    const theme = localStorage.theme as string;
+    return ensImage ? (
+      <img src={ensImage} width={size} height={size} />
+    ) : (
+      <img
+        src={theme === "dark" ? "/avatar-white.svg" : "/avatar.svg"}
+        width={size}
+        height={size}
+        alt="avatar"
+      />
+    );
+  };
 
   useEffect(() => {
     const theme = localStorage.theme as string;
