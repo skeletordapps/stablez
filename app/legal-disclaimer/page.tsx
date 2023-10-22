@@ -24,10 +24,10 @@ export default function LegalDisclaimer() {
         </div>
 
         <div
-          className={`flex flex-col justify-center items-center gap-14 bg-bluez dark:bg-bluez/10 text-white p-14  shadow-xl font-medium max-w-[1100px] text-lg border border-[#00EAFF]/50 dark:border-transparent ${roboto.className}`}
+          className={`flex flex-col justify-center items-center gap-14 bg-white/30 dark:bg-bluez/10 dark:text-white p-14  shadow-xl font-medium max-w-[1100px] text-lg border dakr:border-[#00EAFF]/50 dark:border-transparent ${roboto.className}`}
         >
           <div>
-            <p className="text-[#00EAFF] text-xl">
+            <p className="text-bluez dark:text-[#00EAFF] text-xl pb-2">
               1 - Financial and Investment Advice
             </p>
             The information provided on this website does not constitute any
@@ -40,14 +40,16 @@ export default function LegalDisclaimer() {
             ownership, guarantee of profits, or returns.
           </div>
           <div>
-            <p className="text-[#00EAFF] text-xl">2 - Tax Obligations</p> Users
-            are solely responsible for complying with relevant tax authorities
-            and meeting any tax obligations applicable to their respective
-            jurisdictions. The contributors to this website shall not be held
-            liable for determining taxes related to users' transactions.
+            <p className="text-bluez dark:text-[#00EAFF] text-xl pb-2">
+              2 - Tax Obligations
+            </p>{" "}
+            Users are solely responsible for complying with relevant tax
+            authorities and meeting any tax obligations applicable to their
+            respective jurisdictions. The contributors to this website shall not
+            be held liable for determining taxes related to users' transactions.
           </div>
           <div>
-            <p className="text-[#00EAFF] text-xl">
+            <p className="text-bluez dark:text-[#00EAFF] text-xl pb-2">
               3 - No Warranties or Promised Returns
             </p>
             This website makes no warranties, guarantees, or promises of any
@@ -56,13 +58,15 @@ export default function LegalDisclaimer() {
             may be amended at the contributors' discretion without prior notice.
           </div>
           <div>
-            <p className="text-[#00EAFF] text-xl">4 - Bugs and Security</p> The
-            website is not guaranteed to be immune from bugs, technical issues,
-            or security vulnerabilities. Users assume all risks associated with
-            using the website, and the contributors shall not be liable for any
-            losses resulting from such issues.
+            <p className="text-bluez dark:text-[#00EAFF] text-xl pb-2">
+              4 - Bugs and Security
+            </p>{" "}
+            The website is not guaranteed to be immune from bugs, technical
+            issues, or security vulnerabilities. Users assume all risks
+            associated with using the website, and the contributors shall not be
+            liable for any losses resulting from such issues.
           </div>
-          <div className="text-white pt-10 border-t border-white text-xl">
+          <div className="dark:text-white pt-10 border-t border-black/20 dark:border-white text-xl">
             By accessing and using this website, you agree to release the
             contributors from any and all liabilities, claims, damages, losses,
             or expenses arising from or related to your use of the website. The
