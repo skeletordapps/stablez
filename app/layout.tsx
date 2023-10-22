@@ -58,7 +58,6 @@ const stablezThemeDark = merge(midnightTheme(), {
   colors: {
     accentColor: "#0047FF",
     accentColorForeground: "white",
-    profileForeground: "red",
   },
 } as Theme);
 
