@@ -25,7 +25,6 @@ export default function Nav() {
     (selectedTheme: Theme) => {
       setTheme(selectedTheme);
       localStorage.setItem("theme", selectedTheme);
-      document.documentElement.classList.remove("dark");
 
       switch (selectedTheme) {
         case Theme.light:
@@ -111,13 +110,18 @@ export default function Nav() {
           className={`flex items-center justify-between w-full py-[20px] px-[10px] border-b border-bluez/[24%] dark:border-aquaz/20 ${roboto.className}`}
         >
           <Link href="/" className="hover:opacity-75">
-            <Image src="/logo.svg" width={28.25} height={28.25} alt="logo" />
+            <Image
+              src={theme === Theme.light ? "logo.svg" : "/logo-white.svg"}
+              width={28.25}
+              height={28.25}
+              alt="logo"
+            />
           </Link>
           <div className="flex items-center justify-center flex-1"></div>
           <div className="flex flex-row items-center gap-3">
             <Connect />
             <button
-              className="w-[29px] h-[29px]"
+              className="w-[29px] h-[29px] dark:text-white"
               onMouseEnter={() => setOpen(true)}
             >
               <svg

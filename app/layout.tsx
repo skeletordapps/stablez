@@ -11,11 +11,13 @@ import {
   getDefaultWallets,
   RainbowKitProvider,
   lightTheme,
+  midnightTheme,
   Theme,
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { base } from "wagmi/chains";
 import { jsonRpcProvider } from "@wagmi/core/providers/jsonRpc";
+import { useEffect, useState } from "react";
 
 const merge = require("lodash.merge");
 
@@ -45,10 +47,18 @@ const wagmiConfig = createConfig({
   publicClient,
 });
 
-const stablezTheme = merge(lightTheme(), {
+const stablezThemeLight = merge(lightTheme(), {
   colors: {
     accentColor: "#0047FF",
     accentColorForeground: "white",
+  },
+} as Theme);
+
+const stablezThemeDark = merge(midnightTheme(), {
+  colors: {
+    accentColor: "#0047FF",
+    accentColorForeground: "white",
+    profileForeground: "red",
   },
 } as Theme);
 
@@ -65,6 +75,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [themeSelected, setThemeSelected] = useState(stablezThemeLight);
+
+  useEffect(() => {
+    const theme = localStorage.theme as string;
+    theme === "dark"
+      ? setThemeSelected(stablezThemeDark)
+      : setThemeSelected(stablezThemeLight);
+    const mutationObserver = new MutationObserver((mutations) => {
+      const hasDarkClass = document.querySelector(".dark") !== null;
+
+      hasDarkClass
+        ? setThemeSelected(stablezThemeDark)
+        : setThemeSelected(stablezThemeLight);
+    });
+
+    mutationObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }, []);
+
   return (
     <html lang="en">
       <head>
@@ -79,7 +110,7 @@ export default function RootLayout({
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider
             chains={chains}
-            theme={stablezTheme}
+            theme={themeSelected}
             avatar={CustomAvatar}
           >
             <div className="flex flex-col items-center bg-main dark:bg-main-dark w-full">

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Roboto_Condensed } from "next/font/google";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { usdc, fusdt, piggy, finished } from "@/public/svg";
 
 const roboto = Roboto_Condensed({
@@ -219,7 +219,7 @@ export default function Earn() {
               <div className="py-6"></div>
 
               {farms.map((farm, index) => (
-                <>
+                <Fragment key={index}>
                   <div
                     className={`${
                       index % 2 === 0
@@ -338,22 +338,22 @@ export default function Earn() {
                         className={`transition-all bg-red-500/20 xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white dark:text-red-400 text-[16px] font-medium border dark:border-red-400 gap-3 ${roboto.className}`}
                       >
                         {finished}
-                        {farm.status}
+                        Ended
                       </span>
                     )}
                   </div>
-                </>
+                </Fragment>
               ))}
             </div>
 
             {/* MOBILE FARMS LIST */}
             <div
-              className={`flex xl:hidden flex-col md:flex-row justify-center flex-wrap mt-5 text-[16px] md:text-[12px] text-bluez gap-3 ${roboto.className}`}
+              className={`flex xl:hidden flex-col md:flex-row justify-center flex-wrap mt-5 text-[16px] md:text-[12px] text-bluez dark:text-white gap-3 ${roboto.className}`}
             >
               {farms.map((farm, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col justify-center items-start text-start w-full md:max-w-[250px] px-4 even:bg-[#D4E1FD] even:border-blue-100 odd:bg-[#FAFDFF] odd:border-bluez/10" border py-6 rounded-[8px]`}
+                  className={`flex flex-col justify-center items-start text-start w-full md:max-w-[250px] px-4 even:bg-[#D4E1FD] dark:even:bg-bluez/40 even:border-blue-100 dark:even:border-bluez/40 odd:bg-[#FAFDFF] dark:odd:bg-bluez/20 dark:odd:border-bluez/30 odd:border-bluez/10" border py-6 rounded-[8px]`}
                 >
                   <div className="flex items-center mb-4">
                     <div className="w-[28px] z-10 drop-shadow-md">{usdc}</div>
@@ -362,7 +362,6 @@ export default function Earn() {
                     </div>
                     <span className="ml-4">{farm.pair}</span>
                   </div>
-
                   <div className="flex flex-col gap-1">
                     <p>
                       <span
@@ -426,19 +425,18 @@ export default function Earn() {
                       {farm.claimedRewards}
                     </p>
                   </div>
-
                   <div className="flex flex-col justify-center items-end mt-4 gap-2 w-full">
                     {farm.status === "OPEN" ? (
                       <Link
                         href={`/earn/${index + 1}`}
-                        className={`transition-all bg-bluez w-full xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white hover:text-bluez border hover:scale-[1.02] gap-3 ${roboto.className}`}
+                        className={`transition-all bg-bluez dark:bg-white w-full  h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium hover:bg-white dark:text-bluez hover:text-bluez border hover:scale-[1.02] gap-3 ${roboto.className}`}
                       >
                         {piggy}
                         <span>Earn</span>
                       </Link>
                     ) : (
                       <span
-                        className={`transition-all bg-red-500/20 w-full xl:min-w-[100px] xl:max-w-[100px] h-[39px] flex justify-center items-center rounded-lg text-white text-[16px] font-medium border gap-3 ${roboto.className}`}
+                        className={`transition-all bg-red-500/20 w-full h-[39px] flex justify-center items-center rounded-lg text-white dark:text-red-400 text-[16px] font-medium border dark:border-red-400 gap-3 ${roboto.className}`}
                       >
                         {finished}
                         Ended

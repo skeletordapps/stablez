@@ -161,7 +161,7 @@ export default function Staking() {
                   </div>
                 </div>
               ) : (
-                <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] dark:text-white/80 text-left pl-2 py-[9px] pt-[12px]">
+                <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] text-left pl-2 py-[9px] pt-[12px]">
                   <p>
                     Weth Accumulated:{" "}
                     <span className="text-green-700 dark:text-green-400">

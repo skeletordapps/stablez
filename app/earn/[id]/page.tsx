@@ -27,33 +27,34 @@ export default function Farm({ params }: { params: { id: string } }) {
   };
 
   return (
-    <main className="flex flex-col w-full xl:max-w-[500px] text-center mb-24">
+    <main className="flex flex-col w-full xl:max-w-[500px] text-center mb-24 px-4">
       <section className="flex items-center justify-between w-full mt-10 md:mt-[87px] mb-[48px]">
         {/* FARMS RESUME */}
         <div className="w-full flex flex-col justify-between text-white text-center">
           <h3
-            className={`font-medium text-[28px] text-bluez ${roboto.className}`}
+            className={`font-medium text-[28px] text-bluez dark:text-aquaz ${roboto.className}`}
           >
             Earn while staking
           </h3>
-          <span className="font-light text-[14px] text-[#3E3E3E]">
+          <span className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
             Stake your LP tokens to earn rewards.
           </span>
         </div>
       </section>
 
-      <div className="flex flex-col bg-white/70 border border-bluez/30 w-full md:rounded-[8px] shadow-lg mb-10">
+      <div className="flex flex-col bg-white/70 dark:bg-bluez/40 border border-bluez/30 w-full rounded-[8px] shadow-lg mb-10">
         <div className="flex flex-col w-full">
           <div
-            className={`flex items-center w-full text-bluez font-medium px-4 md:px-8 pt-8 justify-between ${roboto.className}`}
+            className={`flex items-center w-full text-bluez dark:text-white font-medium px-4 md:px-8 pt-8 justify-between ${roboto.className}`}
           >
             <div className="flex items-center">
               <div className="w-[28px]">{usdc}</div>
               <div className="w-[28px] ml-[-10px] drop-shadow-md">{fusdt}</div>
               <span className="ml-3 text-[18px]">vAMM-WETH/USDC</span>
             </div>
-            <p className="text-slate-500 text-[14px]">
-              APR: <span className="text-slate-700">130%</span>
+            <p className="text-slate-500 dark:text-slate-400 text-[14px]">
+              APR:{" "}
+              <span className="text-slate-700 dark:text-slate-200">130%</span>
             </p>
           </div>
           <div className="flex items-center justify-between text-white/80 text-[14px] py-8 px-4 md:px-8 gap-3 mt-10 bg-bluez">
@@ -91,13 +92,13 @@ export default function Farm({ params }: { params: { id: string } }) {
               ))}
             </div>
             <p
-              className={`text-end font-light text-[14px] mb-[-26px] pr-1 text-slate-500 ${
+              className={`text-end font-light text-[14px] mb-[-26px] pr-1 text-slate-500 dark:text-white/80 ${
                 roboto.className
               } ${tab === 2 ? "hidden" : "block"}`}
             >
               {tab === 0 ? "Available:" : "Staked:"}{" "}
               <button
-                className="text-slate-700 hover:text-bluez"
+                className="text-slate-700 dark:text-white hover:text-bluez dark:hover:text-aquaz"
                 onClick={() => onInputChange(Number(1000).toString())}
               >
                 {Number(1000).toLocaleString("en-us", {
@@ -112,7 +113,7 @@ export default function Farm({ params }: { params: { id: string } }) {
               <input
                 type="text"
                 placeholder="Enter the amount"
-                className="w-full bg-transparent border border-slate-600 placeholder-slate-600 p-6 text-black rounded-[8px] text-[14px]"
+                className="w-full bg-transparent border border-slate-600 dark:border-white placeholder-slate-600 dark:placeholder-white p-6 text-black dark:text-white rounded-[8px] text-[14px]"
                 onChange={(e) => onInputChange(e.target.value)}
                 value={inputValue}
               />
@@ -121,14 +122,16 @@ export default function Farm({ params }: { params: { id: string } }) {
                 <div className="w-[22px] ml-[-10px] drop-shadow-md">
                   {fusdt}
                 </div>
-                <span className="ml-2 text-[14px]">vAMM-WETH/USDC</span>
+                <span className="ml-2 text-[14px text-bluez dark:text-aquaz">
+                  vAMM-WETH/USDC
+                </span>
               </div>
             </div>
           ) : (
-            <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] text-left pl-2 py-[9px] pt-[12px]">
+            <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] dark:text-white text-left pl-2 py-[9px] pt-[12px]">
               <p>
                 Weth Accumulated:{" "}
-                <span className="text-green-700">
+                <span className="text-green-700 dark:text-green-400">
                   {Number(0.02333).toLocaleString("en-us", {
                     maximumFractionDigits: 4,
                   })}
@@ -136,7 +139,7 @@ export default function Farm({ params }: { params: { id: string } }) {
               </p>
               <p>
                 Anytoken Accumulated:{" "}
-                <span className="text-green-700">
+                <span className="text-green-700 dark:text-green-400">
                   {Number(0.02333).toLocaleString("en-us", {
                     maximumFractionDigits: 4,
                   })}
@@ -189,7 +192,7 @@ export default function Farm({ params }: { params: { id: string } }) {
       </div>
       <Link
         href="/earn"
-        className="flex flex-row gap-3 items-center justify-center"
+        className="flex flex-row gap-3 items-center justify-center dark:text-aquaz"
       >
         <svg
           fill="none"
