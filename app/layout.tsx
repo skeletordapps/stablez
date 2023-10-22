@@ -111,7 +111,7 @@ export default function RootLayout({
           key="desc"
         />
       </head>
-      <body className={inter.className}>
+      <body className={`dark:bg-[#111827] ${inter.className}`}>
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider
             chains={chains}
