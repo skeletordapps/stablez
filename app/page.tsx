@@ -154,7 +154,7 @@ export default function Dashboard() {
           <div className="flex justify-center items-center gap-2 xl:gap-20 font-medium text-[13px] pt-[60px]">
             <div className="flex flex-col text-bluez dark:text-white/80 w-[300px]">
               <span className="font-medium text-[12px] lg:text-[28px]">
-                TOTAL STAKED
+                TOTAL LOCKED
               </span>
               <span className="font-black text-[16px] md:text-[32px] dark:text-white">
                 12000.50k

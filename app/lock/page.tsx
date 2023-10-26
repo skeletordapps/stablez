@@ -10,9 +10,14 @@ const roboto = Roboto_Condensed({
   subsets: ["latin"],
 });
 
-const tabs = ["Stake", "Unstake", "Rewards"];
+const tabs = ["Lock", "Redeem", "Rewards", "DAO Votes"];
+const buttonLabelByTabSelected = [
+  "Lock $StableZ and receive $STR",
+  "Initiate a notice to withdraw after 7 days",
+  "Claim Rewards",
+];
 
-export default function Staking() {
+export default function Lock() {
   const [tab, setTab] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const { theme } = useContext(StateContext);
@@ -35,61 +40,51 @@ export default function Staking() {
           <h3
             className={`font-medium text-[28px] text-bluez dark:text-aquaz ${roboto.className}`}
           >
-            Staking
+            Lock
           </h3>
           <span className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
-            Stake your $StableZ to Earn Rewards.
+            Lock your $StableZ to Earn Rewards.
           </span>
 
-          <div className="flex justify-center items-center font-medium text-[13px] pt-[60px] text-bluez dark:text-white/80">
-            <div className="flex flex-col w-[200px] md:w-[220px]">
+          <div className="flex justify-center items-center font-medium text-[13px] pt-[60px] text-bluez dark:text-white/80 flex-wrap gap-10 max-w-[600px] self-center">
+            <div className="flex flex-col justify-center items-center p-6 bg-white dark:bg-bluez/40 border border-bluez/40 rounded-[8px] text-bluez/80 dark:text-white/80 shadow-md">
               <span className="font-medium text-[12px] lg:text-[20px]">
                 PRICE
               </span>
-              <span className="font-black text-[16px] md:text-[24px] dark:text-white">
-                12000.50k
+              <span className="font-black text-[16px] md:text-[24px] text-bluez dark:text-white">
+                $1.00
               </span>
             </div>
-            <div className="flex flex-col w-[200px] md:w-[220px]">
+            <div className="flex flex-col justify-center items-center p-6 bg-white dark:bg-bluez/40 border border-bluez/40 rounded-[8px] text-bluez/80 dark:text-white/80 shadow-md">
               <span className="font-medium text-[12px] lg:text-[20px]">
                 APR
               </span>
-              <span className="font-black text-[16px] md:text-[24px] dark:text-white">
-                12000.50k
+              <span className="font-black text-[16px] md:text-[24px] text-bluez dark:text-white">
+                130%
               </span>
             </div>
-            <div className="flex flex-col w-[200px] md:w-[220px]">
+            <div className="flex flex-col justify-center items-center p-6 bg-white dark:bg-bluez/40 border border-bluez/40 rounded-[8px] text-bluez/80 dark:text-white/80 shadow-md">
               <span className="font-medium text-[12px] lg:text-[20px]">
-                C. SUPPLY
+                CIRCULATING $STZ
               </span>
-              <span className="font-black text-[16px] md:text-[24px] dark:text-white">
-                12000.50k
+              <span className="font-black text-[16px] md:text-[24px] text-bluez dark:text-white">
+                12,000.00
               </span>
             </div>
-          </div>
-          <div className="flex justify-center items-center font-medium text-[13px] pt-[20px] md:pt-[40px] text-bluez dark:text-white/80">
-            <div className="flex flex-col w-[200px] md:w-[220px]">
+            <div className="flex flex-col justify-center items-center p-6 bg-white dark:bg-bluez/40 border border-bluez/40 rounded-[8px] text-bluez/80 dark:text-white/80 shadow-md">
               <span className="font-medium text-[12px] lg:text-[20px]">
-                STAKED
+                IN WALLET
               </span>
-              <span className="font-black text-[16px] md:text-[24px] dark:text-white">
-                12000.50k
+              <span className="font-black text-[16px] md:text-[24px] text-bluez dark:text-white">
+                1,000.00
               </span>
             </div>
-            <div className="flex flex-col w-[200px] md:w-[220px]">
+            <div className="flex flex-col justify-center items-center p-6 bg-white dark:bg-bluez/40 border border-bluez/40 rounded-[8px] text-bluez/80 dark:text-white/80 shadow-md">
               <span className="font-medium text-[12px] lg:text-[20px]">
-                WALLET
+                LOCKED $STZ
               </span>
-              <span className="font-black text-[16px] md:text-[24px] dark:text-white">
-                12000.50k
-              </span>
-            </div>
-            <div className="flex flex-col w-[200px] md:w-[220px]">
-              <span className="font-medium text-[12px] lg:text-[20px]">
-                TOTAL STAKED
-              </span>
-              <span className="font-black text-[16px] md:text-[24px] dark:text-white">
-                12000.50k
+              <span className="font-black text-[16px] md:text-[24px] text-bluez dark:text-white">
+                6,000.00
               </span>
             </div>
           </div>
@@ -127,7 +122,7 @@ export default function Staking() {
                 <p
                   className={`text-end font-light text-[14px] mb-[-26px] pr-1 text-slate-500 dark:text-white/80 ${
                     roboto.className
-                  } ${tab === 2 ? "hidden" : "block"}`}
+                  } ${tab === 2 || tab === 3 ? "hidden" : "block"}`}
                 >
                   {tab === 0 ? "Available:" : "Staked:"}{" "}
                   <button
@@ -141,26 +136,13 @@ export default function Staking() {
                 </p>
               </div>
 
-              {tab !== 2 ? (
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Enter the amount"
-                    className="w-full bg-transparent border border-slate-600 dark:border-white placeholder-slate-600 dark:placeholder-white p-6 text-black dark:text-white rounded-[8px] text-[14px]"
-                    onChange={(e) => onInputChange(e.target.value)}
-                    value={inputValue}
-                  />
-                  <div className="flex items-center absolute top-[25px] right-4">
-                    <div className="w-[22px]">
-                      {theme === Theme.light ? stablez : stablezDark}
-                    </div>
-
-                    <span className="ml-2 text-[14px text-bluez dark:text-aquaz">
-                      StableZ
-                    </span>
-                  </div>
+              {tab === 3 ? (
+                <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] text-left pl-2 py-[9px] pt-[12px]">
+                  <p className="pb-[94px] font-semibold">
+                    There are no DAO Votes ongoing.
+                  </p>
                 </div>
-              ) : (
+              ) : tab === 2 ? (
                 <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] text-left pl-2 py-[9px] pt-[12px]">
                   <p>
                     Weth Accumulated:{" "}
@@ -179,16 +161,35 @@ export default function Staking() {
                     </span>
                   </p>
                 </div>
+              ) : (
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Enter the amount"
+                    className="w-full bg-transparent border border-slate-600 dark:border-white placeholder-slate-600 dark:placeholder-white p-6 text-black dark:text-white rounded-[8px] text-[14px]"
+                    onChange={(e) => onInputChange(e.target.value)}
+                    value={inputValue}
+                  />
+                  <div className="flex items-center absolute top-[25px] right-4">
+                    <div className="w-[22px]">
+                      {theme === Theme.light ? stablez : stablezDark}
+                    </div>
+
+                    <span className="ml-2 text-[14px text-bluez dark:text-aquaz">
+                      StableZ
+                    </span>
+                  </div>
+                </div>
               )}
 
               <button
-                className={`transition-all bg-bluez dark:bg-white w-full h-[49px] flex justify-center items-center rounded-lg text-white dark:text-bluez text-[16px] font-medium hover:scale-[1.02] ${roboto.className}`}
+                className={`${
+                  tab === 3 ? "hidden" : "flex"
+                } transition-all bg-bluez dark:bg-white w-full h-[49px]  justify-center items-center rounded-lg text-white dark:text-bluez text-[16px] font-medium hover:scale-[1.02] ${
+                  roboto.className
+                }`}
               >
-                {tab === 1
-                  ? "Make a request to Withdraw in 7 days"
-                  : tab === 2
-                  ? "Claim Rewards"
-                  : tabs[tab] + " $StableZ"}
+                {buttonLabelByTabSelected[tab]}
               </button>
             </div>
             <Image

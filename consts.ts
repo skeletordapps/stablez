@@ -13,8 +13,8 @@ export const routes: route[] = [
     href: "/earn",
   },
   {
-    title: "Staking",
-    href: "/staking",
+    title: "Lock",
+    href: "/lock",
   },
   {
     title: "Docs",
