@@ -40,11 +40,13 @@ export default function Lock() {
           <h3
             className={`font-medium text-[28px] text-bluez dark:text-aquaz ${roboto.className}`}
           >
-            Lock
+            Lock $StableZ
           </h3>
-          <span className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
-            Lock your $StableZ to Earn Rewards.
-          </span>
+          <p className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
+            Lock <span className="text-bluez font-medium">$STZ</span>, recieve{" "}
+            <span className="text-black font-medium">$STR</span>, and get access
+            to revenue sharing, and other utilities.
+          </p>
 
           <div className="flex justify-center items-center font-medium text-[13px] pt-[60px] text-bluez dark:text-white/80 flex-wrap gap-10 max-w-[600px] self-center">
             <div className="flex flex-col justify-center items-center p-6 bg-white dark:bg-bluez/40 border border-bluez/40 rounded-[8px] text-bluez/80 dark:text-white/80 shadow-md">
