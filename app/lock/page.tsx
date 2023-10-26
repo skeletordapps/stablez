@@ -43,9 +43,13 @@ export default function Lock() {
             Lock $StableZ
           </h3>
           <p className="font-light text-[14px] text-[#3E3E3E] dark:text-white">
-            Lock <span className="text-bluez font-medium">$STZ</span>, recieve{" "}
-            <span className="text-black font-medium">$STR</span>, and get access
-            to revenue sharing, and other utilities.
+            Lock{" "}
+            <span className="text-bluez dark:text-aquaz font-medium">$STZ</span>
+            , recieve{" "}
+            <span className="text-black dark:text-blue-300 font-medium">
+              $STR
+            </span>
+            , and get access to revenue sharing, and other utilities.
           </p>
 
           <div className="flex justify-center items-center font-medium text-[13px] pt-[60px] text-bluez dark:text-white/80 flex-wrap gap-10 max-w-[600px] self-center">
