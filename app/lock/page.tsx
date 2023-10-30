@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Roboto_Condensed } from "next/font/google";
 import { useState, useContext } from "react";
 import { stablez, stablezDark } from "@/public/svg";
+import { Popover } from "@headlessui/react";
+import { ChevronUpIcon, ArrowUpCircleIcon } from "@heroicons/react/20/solid";
+
 import { StateContext, Theme } from "../context/StateContext";
 
 const roboto = Roboto_Condensed({
@@ -117,7 +120,7 @@ export default function Lock() {
                     <button
                       key={index}
                       onClick={() => setTab(index)}
-                      className={`transition-all  w-16 h-[29px] flex justify-center items-center rounded-lg text-white text-[12px] font-medium hover:scale-[1.02] ${
+                      className={`transition-all  w-16 h-[29px] flex justify-center items-center rounded-lg text-white text-[12px] font-medium hover:bg-opacity-75 ${
                         roboto.className
                       } ${tab === index ? "bg-bluez" : "bg-bluez/20"}`}
                     >
@@ -149,23 +152,106 @@ export default function Lock() {
                   </p>
                 </div>
               ) : tab === 2 ? (
-                <div className="flex flex-col gap-2 font-light text-[14px] text-[#3E3E3E] text-left pl-2 py-[9px] pt-[12px]">
-                  <p>
-                    Weth Accumulated:{" "}
-                    <span className="text-green-700 dark:text-green-400">
-                      {Number(0.02333).toLocaleString("en-us", {
-                        maximumFractionDigits: 4,
-                      })}
-                    </span>
-                  </p>
-                  <p>
-                    Anytoken Accumulated:{" "}
-                    <span className="text-green-700 dark:text-green-400">
-                      {Number(0.02333).toLocaleString("en-us", {
-                        maximumFractionDigits: 4,
-                      })}
-                    </span>
-                  </p>
+                <div className="flex gap-4 font-light text-[14px] text-[#3E3E3E] dark:text-white text-left px-1 py-[14px]">
+                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-bluez rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20">
+                    <Popover className="relative">
+                      <Popover.Button>
+                        <p className="flex items-center gap-2">
+                          <span>
+                            {Number(0.02333).toLocaleString("en-us", {
+                              maximumFractionDigits: 4,
+                            })}
+                          </span>
+
+                          <Image
+                            src="/weth.svg"
+                            width={30}
+                            height={20}
+                            alt="weth"
+                          />
+                        </p>
+                      </Popover.Button>
+
+                      <Popover.Panel className="absolute top-[-140px] right-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
+                        <div className="text-center text-white dark:text-black relative">
+                          <div className="absolute bottom-[-33px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
+                          <div className="absolute bottom-[-32px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
+                          <p>
+                            Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit
+                            Amet Loren Ipsum Dolor Sit Amet
+                          </p>
+                        </div>
+
+                        <img src="/solutions.jpg" alt="" />
+                      </Popover.Panel>
+                    </Popover>
+                  </div>
+                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-sky-400 rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20">
+                    <Popover className="relative">
+                      <Popover.Button>
+                        <p className="flex items-center gap-2">
+                          <span>
+                            {Number(0.02333).toLocaleString("en-us", {
+                              maximumFractionDigits: 4,
+                            })}
+                          </span>
+
+                          <Image
+                            src="/weth.svg"
+                            width={30}
+                            height={30}
+                            alt="weth"
+                          />
+                        </p>
+                      </Popover.Button>
+
+                      <Popover.Panel className="absolute top-[-140px] right-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
+                        <div className="text-center text-white dark:text-black relative">
+                          <div className="absolute bottom-[-33px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
+                          <div className="absolute bottom-[-32px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
+                          <p>
+                            Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit
+                            Amet Loren Ipsum Dolor Sit Amet
+                          </p>
+                        </div>
+
+                        <img src="/solutions.jpg" alt="" />
+                      </Popover.Panel>
+                    </Popover>
+                  </div>
+                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-purple-400 rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20">
+                    <Popover className="relative">
+                      <Popover.Button>
+                        <p className="flex items-center gap-2">
+                          <span>
+                            {Number(0.02333).toLocaleString("en-us", {
+                              maximumFractionDigits: 4,
+                            })}
+                          </span>
+
+                          <Image
+                            src="/weth.svg"
+                            width={30}
+                            height={20}
+                            alt="weth"
+                          />
+                        </p>
+                      </Popover.Button>
+
+                      <Popover.Panel className="absolute top-[-140px] right-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
+                        <div className="text-center text-white dark:text-black relative">
+                          <div className="absolute bottom-[-33px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
+                          <div className="absolute bottom-[-32px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
+                          <p>
+                            Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit
+                            Amet Loren Ipsum Dolor Sit Amet
+                          </p>
+                        </div>
+
+                        <img src="/solutions.jpg" alt="" />
+                      </Popover.Panel>
+                    </Popover>
+                  </div>
                 </div>
               ) : (
                 <div className="relative">
@@ -191,7 +277,7 @@ export default function Lock() {
               <button
                 className={`${
                   tab === 3 ? "hidden" : "flex"
-                } transition-all bg-bluez dark:bg-white w-full h-[49px]  justify-center items-center rounded-lg text-white dark:text-bluez text-[16px] font-medium hover:scale-[1.02] ${
+                } transition-all bg-bluez dark:bg-white w-full h-[49px]  justify-center items-center rounded-lg text-white dark:text-bluez text-[16px] font-medium hover:bg-opacity-75 dark:hover:bg-blue-100 ${
                   roboto.className
                 }`}
               >
