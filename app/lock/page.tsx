@@ -152,8 +152,8 @@ export default function Lock() {
                   </p>
                 </div>
               ) : tab === 2 ? (
-                <div className="flex gap-4 font-light text-[14px] text-[#3E3E3E] dark:text-white text-left px-1 py-[14px]">
-                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-bluez rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20">
+                <div className="flex gap-4 font-light text-[14px] text-[#3E3E3E] dark:text-white text-left px-1 py-[13.5px]">
+                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-bluez rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20 border border-bluez/40">
                     <Popover className="relative">
                       <Popover.Button>
                         <p className="flex items-center gap-2">
@@ -172,10 +172,10 @@ export default function Lock() {
                         </p>
                       </Popover.Button>
 
-                      <Popover.Panel className="absolute top-[-140px] right-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
+                      <Popover.Panel className="absolute top-[-140px] left-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
                         <div className="text-center text-white dark:text-black relative">
-                          <div className="absolute bottom-[-33px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
-                          <div className="absolute bottom-[-32px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
+                          <div className="absolute bottom-[-33px] left-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
+                          <div className="absolute bottom-[-32px] left-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
                           <p>
                             Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit
                             Amet Loren Ipsum Dolor Sit Amet
@@ -186,7 +186,7 @@ export default function Lock() {
                       </Popover.Panel>
                     </Popover>
                   </div>
-                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-sky-400 rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20">
+                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-sky-400 rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20 border border-aquaz">
                     <Popover className="relative">
                       <Popover.Button>
                         <p className="flex items-center gap-2">
@@ -205,10 +205,10 @@ export default function Lock() {
                         </p>
                       </Popover.Button>
 
-                      <Popover.Panel className="absolute top-[-140px] right-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
+                      <Popover.Panel className="absolute top-[-140px] left-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
                         <div className="text-center text-white dark:text-black relative">
-                          <div className="absolute bottom-[-33px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
-                          <div className="absolute bottom-[-32px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
+                          <div className="absolute bottom-[-33px] left-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
+                          <div className="absolute bottom-[-32px] left-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
                           <p>
                             Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit
                             Amet Loren Ipsum Dolor Sit Amet
@@ -219,7 +219,7 @@ export default function Lock() {
                       </Popover.Panel>
                     </Popover>
                   </div>
-                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-purple-400 rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20">
+                  <div className="flex items-center justify-between gap-1 py-[6px] px-3 bg-purple-400 rounded-full text-white font-semibold transition-all hover:bg-opacity-75 z-20 border border-purple-200">
                     <Popover className="relative">
                       <Popover.Button>
                         <p className="flex items-center gap-2">
@@ -238,10 +238,10 @@ export default function Lock() {
                         </p>
                       </Popover.Button>
 
-                      <Popover.Panel className="absolute top-[-140px] right-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
+                      <Popover.Panel className="absolute top-[-140px] left-0 z-10 bg-bluez dark:bg-aquaz w-[200px] p-4 rounded-[8px] border border-white  shadow-xl shadow-black/30">
                         <div className="text-center text-white dark:text-black relative">
-                          <div className="absolute bottom-[-33px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
-                          <div className="absolute bottom-[-32px] right-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
+                          <div className="absolute bottom-[-33px] left-3 w-0 h-0 border-8 border-solid border-transparent border-t-white" />
+                          <div className="absolute bottom-[-32px] left-3 w-0 h-0 border-8 border-solid border-transparent border-t-bluez dark:border-t-aquaz" />
                           <p>
                             Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit
                             Amet Loren Ipsum Dolor Sit Amet
