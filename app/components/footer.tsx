@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Roboto_Condensed } from "next/font/google";
-import { routes, socials } from "@/consts";
+import { ROUTES, SOCIALS } from "@/app/utils/consts";
 
 const roboto = Roboto_Condensed({
   weight: ["300", "400", "700"],
@@ -14,14 +14,14 @@ export default function Footer() {
       <div className="flex flex-col w-full max-w-[1600px] px-4 xl:px-[70px] gap-4">
         <div className="flex flex-row justify-between items-center border-b border-white pb-[20px] w-full px-[10px] text-white">
           <div className="flex flex-row items-center gap-5">
-            <Link href={routes[0].href} className="hover:opacity-75">
-              {routes[0].title}
+            <Link href={ROUTES[0].href} className="hover:opacity-75">
+              {ROUTES[0].title}
             </Link>
-            <Link href={routes[1].href} className="hover:opacity-75">
-              {routes[1].title}
+            <Link href={ROUTES[1].href} className="hover:opacity-75">
+              {ROUTES[1].title}
             </Link>
-            <Link href={routes[2].href} className="hover:opacity-75">
-              {routes[2].title}
+            <Link href={ROUTES[2].href} className="hover:opacity-75">
+              {ROUTES[2].title}
             </Link>
           </div>
           {/* <div className="flex flex-row items-center gap-2">
@@ -38,12 +38,12 @@ export default function Footer() {
         </div>
         <div className="flex flex-row justify-between items-center w-full px-[10px] text-white ">
           <div className="flex flex-row items-center gap-5">
-            <Link href={routes[1].href} className="hover:opacity-75">
-              {routes[3].title}
+            <Link href={ROUTES[1].href} className="hover:opacity-75">
+              {ROUTES[3].title}
             </Link>
           </div>
           <div className="flex flex-row items-center gap-4">
-            {socials.map((item, index) => (
+            {SOCIALS.map((item, index) => (
               <Link key={index} href={item.href} className="hover:opacity-75">
                 <Image
                   src={item.src}

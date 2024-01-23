@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { Roboto_Condensed } from "next/font/google";
-import { routes } from "@/consts";
+import { ROUTES } from "@/app/utils/consts";
 import Link from "next/link";
 import { StateContext, Theme } from "../context/StateContext";
 import { Transition } from "@headlessui/react";
@@ -73,9 +73,8 @@ export default function Nav() {
           </Link>
           <div className="flex items-center justify-center ">
             <div className="text-slate-600 dark:text-slate-400 flex items-center gap-14 text-[16px]">
-              {routes
-                .filter((item) => item.title !== "Legal Disclaimer")
-                .map((item, index) => (
+              {ROUTES.filter((item) => item.title !== "Legal Disclaimer").map(
+                (item, index) => (
                   <Link
                     target={item.title === "Docs" ? "blank" : ""}
                     key={index}
@@ -87,7 +86,8 @@ export default function Nav() {
                   >
                     {item.title}
                   </Link>
-                ))}
+                )
+              )}
             </div>
           </div>
           <div className={`flex flex-row items-center ${signer && "gap-5"} `}>
@@ -154,9 +154,8 @@ export default function Nav() {
         >
           <div className="absolute top-[85px] right-0 w-full px-4">
             <div className="text-slate-600 dark:text-slate-400 flex justify-center items-center flex-wrap gap-10 text-[14px] bg-white/40 dark:bg-bluez/30 backdrop-blur-[8px] shadow-2xl py-10 rounded-b-xl">
-              {routes
-                .filter((item) => item.title !== "Legal Disclaimer")
-                .map((item, index) => (
+              {ROUTES.filter((item) => item.title !== "Legal Disclaimer").map(
+                (item, index) => (
                   <Link
                     key={index}
                     href={item.href}
@@ -167,7 +166,8 @@ export default function Nav() {
                   >
                     {item.title}
                   </Link>
-                ))}
+                )
+              )}
             </div>
           </div>
         </Transition>

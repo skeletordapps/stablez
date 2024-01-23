@@ -2,7 +2,7 @@
 import { usePathname, useParams } from "next/navigation";
 import { useState, createContext, useEffect, ReactNode } from "react";
 
-import { routes } from "../../consts";
+import { ROUTES } from "../utils/consts";
 import { useEthersProvider, useEthersSigner } from "../utils/ethers";
 import { JsonRpcProvider, JsonRpcSigner } from "ethers";
 
@@ -32,7 +32,7 @@ type Props = {
 export const StateProvider = ({ children }: Props) => {
   const pathname = usePathname();
   const params = useParams();
-  const [page, setPage] = useState(routes[0].href);
+  const [page, setPage] = useState(ROUTES[0].href);
   const [provider, setProvider] = useState<any>(undefined);
   const [signer, setSigner] = useState<any>(undefined);
   const [theme, setTheme] = useState(Theme.light);
@@ -53,7 +53,7 @@ export const StateProvider = ({ children }: Props) => {
   }, [walletSigner]);
 
   useEffect(() => {
-    const route = routes.find((item) =>
+    const route = ROUTES.find((item) =>
       params.id
         ? pathname.substring(0, pathname.lastIndexOf("/")) === item.href
         : pathname === item.href
